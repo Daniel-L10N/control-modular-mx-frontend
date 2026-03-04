@@ -24,3 +24,46 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Contenedor de perspectiva para el 3D */
+.tech-cube-container {
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* El Cubo y su rotación suave */
+.tech-cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spinTechCube 12s infinite linear;
+}
+
+@keyframes spinTechCube {
+  0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(180deg); }
+}
+
+/* Las caras del cubo: Estilo Cristal/Ingeniería */
+.tech-face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(79, 70, 229, 0.05); /* Muy sutil */
+  border: 1px solid rgba(79, 70, 229, 0.4); /* Borde técnico */
+  box-shadow: inset 0 0 20px rgba(79, 70, 229, 0.1);
+  backdrop-filter: blur(2px); /* Efecto cristal */
+}
+
+/* Posición geométrica exacta de cada cara */
+.tech-front  { transform: rotateY(0deg) translateZ(100px); }
+.tech-back   { transform: rotateY(180deg) translateZ(100px); }
+.tech-right  { transform: rotateY(90deg) translateZ(100px); }
+.tech-left   { transform: rotateY(-90deg) translateZ(100px); }
+.tech-top    { transform: rotateX(90deg) translateZ(100px); }
+.tech-bottom { transform: rotateX(-90deg) translateZ(100px); }
