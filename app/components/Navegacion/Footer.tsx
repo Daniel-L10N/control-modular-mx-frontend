@@ -31,7 +31,7 @@ export default function Footer() {
               CONTROL<span className="text-indigo-500 font-black">MODULAR</span>
             </span>
             <p className="text-sm text-slate-400 max-w-xs">
-              Socio tecnológico de MFS Ingeniería. Desarrollamos soluciones de hardware, software y domótica en Atenco y el resto de la región.
+             Desarrollamos soluciones de hardware, software y domótica en Atenco y el resto de la región.
             </p>
             <div className="flex space-x-6">
               {socialIcons.map((item) => (
@@ -49,17 +49,17 @@ export default function Footer() {
               <div>
                 <h3 className="text-base font-medium text-white">Servicios Top</h3>
                 <ul role="list" className="mt-4 space-y-4 text-sm text-slate-400">
-                  <li><Link href="/servicios#hardware" className="hover:text-white">Tarjetas PCB a Medida</Link></li>
-                  <li><Link href="/servicios#software" className="hover:text-white">Automatización de Software</Link></li>
-                  <li><Link href="/servicios#nube" className="hover:text-white">Nube Industrial Privada</Link></li>
-                  <li><Link href="/servicios#3d" className="hover:text-white">Impresión y Diseño 3D</Link></li>
+                  <li><Link href="/" className="hover:text-white">Tarjetas PCB a Medida</Link></li>
+                  <li><Link href="/" className="hover:text-white">Automatización de Software</Link></li>
+                  <li><Link href="/" className="hover:text-white">Nube Industrial Privada</Link></li>
+                  <li><Link href="/" className="hover:text-white">Impresión y Diseño 3D</Link></li>
                 </ul>
               </div>
               <div className="mt-12 md:mt-0">
                 <h3 className="text-base font-medium text-white">La Empresa</h3>
                 <ul role="list" className="mt-4 space-y-4 text-sm text-slate-400">
-                  <li><Link href="/nosotros" className="hover:text-white">Nuestra Historia</Link></li>
-                  <li><Link href="/#casos" className="hover:text-white">Casos de Éxito</Link></li>
+                  <li><Link href="/" className="hover:text-white">Nuestra Historia</Link></li>
+                  <li><Link href="/" className="hover:text-white">Casos de Éxito</Link></li>
                   <li><Link href="/contacto" className="hover:text-white">Soporte y Contacto</Link></li>
                 </ul>
               </div>
