@@ -15,12 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className="scroll-smooth">
-      <body className="bg-white selection:bg-indigo-500 selection:text-white">
+      <body className="bg-[#0B1014] selection:bg-indigo-500 selection:text-white">
         <Navbar />
-        {/* El padding-top pt-20 es para que el contenido no quede debajo del Navbar fijo */}
-        <div className="pt-0"> 
-          {children}
-        </div>
+        {children}
         <Footer />
       </body>
     </html>

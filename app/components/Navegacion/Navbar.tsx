@@ -31,7 +31,7 @@ export default function Navbar() {
   return (
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ease-in-out ${
-        isScrolled ? 'bg-slate-900/95 backdrop-blur-md shadow-lg py-4 border-b border-slate-800' : 'bg-transparent py-6'
+        isScrolled ? 'bg-slate-900/95 backdrop-blur-md shadow-lg py-4 border-b border-slate-800' : 'bg-slate-900/90 backdrop-blur-sm py-4 border-b border-slate-800'
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
