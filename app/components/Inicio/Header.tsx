@@ -63,18 +63,12 @@ export default function Header() {
             </div>
           </div>
 
-          {/* COLUMNA DERECHA: EL CUBO 3D TÉCNICO */}
+          {/* COLUMNA DERECHA: ANIMACIÓN DEL CUBO 3D */}
           <div className="relative flex justify-center items-center h-[400px] w-full">
-            {/* Escala responsiva para que el cubo se vea perfecto en móviles y PC */}
-            <div className="transform scale-75 sm:scale-100">
-              <div className="tech-cube-container">
-                <div className="tech-cube">
-                  <div className="tech-face tech-front"></div>
-                  <div className="tech-face tech-back"></div>
-                  <div className="tech-face tech-right"></div>
-                  <div className="tech-face tech-left"></div>
-                  <div className="tech-face tech-top"></div>
-                  <div className="tech-face tech-bottom"></div>
+            <div className="flex md:min-h-full sm:min-h-screen sm:mb-20 sm:mt-28 sm:mr-60 md:mb--20 mb-60">
+              <div className="container">
+                <div className="box md:ml-96 md:mt-60 mt-56">
+                  <div className="cube"></div>
                 </div>
               </div>
             </div>

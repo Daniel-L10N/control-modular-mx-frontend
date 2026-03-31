@@ -9,7 +9,7 @@ import LogoCloud from "./components/Inicio/LogoCloud";
 
 export default function Home() {
   return (
-    <main data-scroll-section className="pt-28">
+    <main data-scroll-section>
       {/* El "Hero" principal donde hablaremos de la dualidad México/Cuba */}
       <Header />
       
