@@ -21,11 +21,10 @@ export default function ContactoPage() {
   };
 
   return (
-    <main className="bg-slate-50 min-h-screen">
+    <main className="bg-gray-50 min-h-screen">
       
       {/* HEADER DE CONTACTO */}
-      <div className="bg-slate-900 text-white py-24 sm:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+      <div className="bg-slate-900 text-white py-24 sm:py-32">
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-white">
             Diseñemos el futuro de tu planta
