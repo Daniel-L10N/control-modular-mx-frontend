@@ -55,6 +55,18 @@ body {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
+/* Custom styles for mobile optimization */
+@media (max-width: 768px) {
+  nav {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+  .logo-danit {
+    font-size: 1.25rem !important;
+    padding: 1px 8px !important;
+  }
+}
+
 /* Logo DanIT - glowing effect from company_portfolio */
 .logo-danit {
   cursor: pointer;
@@ -93,13 +105,15 @@ body {
 }
 
 /* Contenedor principal del cubo - estilo company_portfolio */
-.container {
+.cube-container {
   position: relative;
   width: 100%;
   transform: rotate(-35deg);
+  /* Added margin-left to move it slightly left as requested */
+  margin-left: -100px;
 }
 
-.container .box {
+.cube-container .cube-box {
   position: relative;
   left: -200px;
   display: flex;
@@ -119,7 +133,7 @@ body {
   }
 }
 
-.container .box .cube {
+.cube-container .cube-box .cube {
   position: relative;
   width: 200px;
   height: 200px;

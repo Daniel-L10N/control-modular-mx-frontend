@@ -47,7 +47,7 @@ export default function Features() {
           </p>
           <div className="mt-8">
             <div className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
-              Socio tecnológico de MFS Ingeniería
+              Socio tecnológico de CMX
             </div>
           </div>
         </div>

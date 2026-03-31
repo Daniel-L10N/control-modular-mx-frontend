@@ -83,10 +83,11 @@ export default function NosotrosPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 opacity-80" />
               <div className="absolute bottom-0 left-0 p-8">
-                <img className="h-10 mb-4" src="https://tailwindui.com/img/logos/workcation.svg?color=indigo&shade=400" alt="MFS Ingeniería" />
-                <p className="text-lg font-medium text-white max-w-sm">
-                  "Socio tecnológico de MFS Ingeniería para la modernización de infraestructuras industriales en México."
+                <img className="h-10 mb-4" src="https://tailwindui.com/img/logos/workcation.svg?color=indigo&shade=400" alt="Socio de CMX" />
+                <p className="text-gray-300 italic">
+                  "Socio tecnológico estratégico para la modernización de infraestructuras industriales en México."
                 </p>
+
               </div>
             </div>
           </div>
