@@ -38,39 +38,32 @@ const features = [
 export default function Features() {
   return (
     <div className="bg-white">
-      <div className="mx-auto lg:mx-12 max-w-full py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-24 lg:px-8 border-t border-gray-100">
-        
-        {/* Lado Izquierdo: Presentación de la Empresa */}
+      <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-24 lg:px-8">
         <div>
-          <h2 className="text-lg font-semibold text-indigo-600 uppercase tracking-wide">Control Modular MX</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900">Soluciones de Ingeniería Integral</p>
-          <p className="mt-4 text-lg text-gray-500 leading-relaxed">
+          <h2 className="text-lg font-semibold text-indigo-600">Soluciones</h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900">Ingeniería Integral</p>
+          <p className="mt-4 text-lg text-gray-500">
             Fusionamos el desarrollo de software avanzado, la ingeniería electrónica y la fabricación 3D para digitalizar y automatizar tu industria de punta a punta.
           </p>
-          
           <div className="mt-8">
-            <div className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-300">
+            <div className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
               Socio tecnológico de MFS Ingeniería
             </div>
           </div>
         </div>
-
-        {/* Lado Derecho: Grid de Características */}
         <div className="mt-12 lg:col-span-2 lg:mt-0">
           <dl className="space-y-10 sm:grid sm:grid-flow-col sm:grid-cols-2 sm:grid-rows-4 sm:gap-x-6 sm:gap-y-10 sm:space-y-0 lg:gap-x-8">
             {features.map((feature) => (
-              <div key={feature.name} className="relative p-4 rounded-lg hover:bg-slate-50 transition-colors duration-200 group">
+              <div key={feature.name} className="relative">
                 <dt>
-                  {/* Icono con un ligero efecto hover para darle más vida */}
-                  <CheckIcon className="absolute h-6 w-6 text-indigo-500 group-hover:scale-110 transition-transform duration-200" aria-hidden="true" />
+                  <CheckIcon className="absolute h-6 w-6 text-green-500" aria-hidden="true" />
                   <p className="ml-9 text-lg font-medium leading-6 text-gray-900">{feature.name}</p>
                 </dt>
-                <dd className="mt-2 ml-9 text-base text-gray-500 leading-relaxed">{feature.description}</dd>
+                <dd className="mt-2 ml-9 text-base text-gray-500">{feature.description}</dd>
               </div>
             ))}
           </dl>
         </div>
-
       </div>
     </div>
   )
