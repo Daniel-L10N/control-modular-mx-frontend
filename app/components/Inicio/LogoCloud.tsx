@@ -7,20 +7,18 @@ export default function LogoCloud() {
         </p>
         <div className="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
           <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-            <h3 className="text-xl font-black text-slate-800 tracking-tighter">MFS</h3>
+            <h3 className="text-xl font-black text-slate-800 tracking-tighter">CMX</h3>
           </div>
           <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
             <h3 className="text-xl font-bold text-slate-400">BIZERBA</h3>
           </div>
           <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-             <h3 className="text-xl font-bold text-slate-400 uppercase">Grupo Bafar</h3>
+            <h3 className="text-xl font-bold text-slate-400 uppercase">TECNOLOGÍA</h3>
           </div>
-          <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
-            <h3 className="text-xl font-bold text-slate-400 uppercase tracking-widest">CarneMart</h3>
+          <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+            <h3 className="text-xl font-bold text-slate-400 uppercase">INNOVACIÓN</h3>
           </div>
-          <div className="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
-            <h3 className="text-xl font-bold text-slate-400 uppercase">Soriana</h3>
-          </div>
+
         </div>
       </div>
     </div>

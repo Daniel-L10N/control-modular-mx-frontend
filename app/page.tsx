@@ -25,7 +25,7 @@ export default function Home() {
       {/* Llamado a la acción: "Solicita una auditoría para tu planta" */}
       <CTA />
       
-      {/* Clientes y aliados (Aquí podemos poner a MFS Ingeniería) */}
+      {/* Clientes y aliados (Aquí podemos poner a nuestros socios estratégicos) */}
       <LogoCloud />
       
      
