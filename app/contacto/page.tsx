@@ -2,18 +2,63 @@
 
 import { useState } from 'react';
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { API_URL } from "../lib/config";
+
+const SERVICIOS = [
+  { value: 'hardware', label: 'Desarrollo de Hardware (PCB)' },
+  { value: 'software', label: 'Software Industrial / Nube' },
+  { value: 'domotica', label: 'Domótica y Control de Accesos' },
+  { value: '3d', label: 'Diseño e Impresión 3D' },
+  { value: 'soporte', label: 'Mantenimiento o Soporte' },
+  { value: 'otro', label: 'Otro' },
+];
 
 export default function ContactoPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formStatus, setFormStatus] = useState<'idle' | 'success'>('idle');
+  const [formStatus, setFormStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [formData, setFormData] = useState({
+    nombre: '',
+    empresa: '',
+    email: '',
+    telefono: '',
+    servicio: 'hardware',
+    mensaje: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
+    setFormStatus('idle');
+
+    try {
+      const res = await fetch(`${API_URL}/contacto/contacto/`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setFormStatus('success');
+        setFormData({
+          nombre: '',
+          empresa: '',
+          email: '',
+          telefono: '',
+          servicio: 'hardware',
+          mensaje: '',
+        });
+      } else {
+        setFormStatus('error');
+      }
+    } catch (error) {
+      setFormStatus('error');
+    } finally {
       setIsSubmitting(false);
-      setFormStatus('success');
-    }, 1500);
+    }
   };
 
   return (
@@ -122,17 +167,22 @@ export default function ContactoPage() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                {formStatus === 'error' && (
+                  <div className="bg-red-50 text-red-600 p-4 rounded-lg text-sm">
+                    Error al enviar el mensaje. Por favor intenta de nuevo.
+                  </div>
+                )}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="nombre" className="block text-sm font-medium text-gray-900">Nombre completo</label>
-                    <input type="text" id="nombre" name="nombre" required
+                    <input type="text" id="nombre" name="nombre" required value={formData.nombre} onChange={handleChange}
                       className="mt-2 block w-full rounded-md border-0 py-2.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
                       placeholder="Ej. Ing. Daniel"
                     />
                   </div>
                   <div>
                     <label htmlFor="empresa" className="block text-sm font-medium text-gray-900">Empresa / Industria</label>
-                    <input type="text" id="empresa" name="empresa" required
+                    <input type="text" id="empresa" name="empresa" value={formData.empresa} onChange={handleChange}
                       className="mt-2 block w-full rounded-md border-0 py-2.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
                       placeholder="Nombre de tu empresa"
                     />
@@ -142,14 +192,14 @@ export default function ContactoPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-900">Correo electrónico</label>
-                    <input type="email" id="email" name="email" required
+                    <input type="email" id="email" name="email" required value={formData.email} onChange={handleChange}
                       className="mt-2 block w-full rounded-md border-0 py-2.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
                       placeholder="tu@empresa.com"
                     />
                   </div>
                   <div>
                     <label htmlFor="telefono" className="block text-sm font-medium text-gray-900">Teléfono (WhatsApp)</label>
-                    <input type="tel" id="telefono" name="telefono"
+                    <input type="tel" id="telefono" name="telefono" value={formData.telefono} onChange={handleChange}
                       className="mt-2 block w-full rounded-md border-0 py-2.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
                       placeholder="+52 55..."
                     />
@@ -158,19 +208,16 @@ export default function ContactoPage() {
 
                 <div>
                   <label htmlFor="servicio" className="block text-sm font-medium text-gray-900">Tipo de Servicio Requerido</label>
-                  <select id="servicio" name="servicio" className="mt-2 block w-full rounded-md border-0 py-2.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-white">
-                    <option>Desarrollo de Hardware (PCB)</option>
-                    <option>Software Industrial / Nube</option>
-                    <option>Domótica y Control de Accesos</option>
-                    <option>Diseño e Impresión 3D</option>
-                    <option>Mantenimiento o Soporte</option>
-                    <option>Otro</option>
+                  <select id="servicio" name="servicio" value={formData.servicio} onChange={handleChange} className="mt-2 block w-full rounded-md border-0 py-2.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-white">
+                    {SERVICIOS.map(s => (
+                      <option key={s.value} value={s.value}>{s.label}</option>
+                    ))}
                   </select>
                 </div>
 
                 <div>
                   <label htmlFor="mensaje" className="block text-sm font-medium text-gray-900">Detalles técnicos del proyecto</label>
-                  <textarea id="mensaje" name="mensaje" rows={4} required
+                  <textarea id="mensaje" name="mensaje" rows={4} required value={formData.mensaje} onChange={handleChange}
                     className="mt-2 block w-full rounded-md border-0 py-2.5 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
                     placeholder="Describe el problema a resolver o las especificaciones técnicas..."
                   />
