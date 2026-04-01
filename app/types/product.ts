@@ -125,6 +125,8 @@ export interface ProductListItem {
     nombre: string;
     slug: string;
   };
+  /** Last update timestamp - used for sitemap */
+  fecha_actualizacion?: string;
 }
 
 /**
