@@ -1,38 +1,83 @@
-# Control Modular MX - Plataforma Web
+# Control Modular MX - Frontend
 
-Sitio web oficial y plataforma de gestión para **Control Modular MX**, empresa especializada en diseño de tarjetas electrónicas (PCB), desarrollo de software industrial y domótica, ubicada en Atenco, Estado de México.
-
-Actualmente, el sitio público se encuentra en modo **"En Construcción"** para proteger la marca y desvincular temporalmente la imagen de socios estratégicos por motivos de derechos de autor, mientras se prepara el panel administrativo dinámico.
+Sitio web oficial y plataforma de gestión para **Control Modular MX**, empresa especializada en diseño de tarjetas electrónicas (PCB), desarrollo de software industrial y domótica.
 
 ## 🛠 Stack Tecnológico
 
-* **Frontend:** Next.js (App Router), React, Tailwind CSS.
-* **Backend / API:** Django / Django REST Framework (Python).
-* **Iconos y UI:** Heroicons, React Simple Typewriter.
+- **Frontend:** Next.js (App Router), React, Tailwind CSS
+- **Backend / API:** Django / Django REST Framework
+- **Iconos y UI:** Heroicons
 
-## 🚀 Infraestructura y Despliegue
+## 🚀 Configuración de API
 
-La arquitectura del proyecto está dividida para maximizar el rendimiento del frontend y mantener el control total sobre los datos en el backend:
+El frontend consume datos del backend. Configura la URL de la API:
 
-* **Dominio:** Registrado y administrado a través de **Neubox**.
-* **Frontend (Next.js):** Desplegado en **Vercel**. Vercel se encarga de compilar y servir la página de forma ultrarrápida utilizando su red global.
-* **Backend (Django):** Alojado en un **Servidor Personal Ubuntu** (Mi PC/Servidor propio). 
-  * *Dirección del servidor (IP/Dominio):* `[Escribe aquí la IP pública de tu servidor o dominio de la API, ej. 192.168.1.xxx]`
-  * Las variables de entorno para conectar el Frontend con este servidor se encuentran en el archivo `.env.local` bajo la variable `NEXT_PUBLIC_API_URL`.
+### Variables de Entorno
 
----
-
-## 💻 Entorno de Desarrollo (Getting Started)
-
-Este es un proyecto de [Next.js](https://nextjs.org) inicializado con [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-Para correr el servidor de desarrollo en tu máquina local:
+Crea un archivo `.env.local` en la raíz del proyecto:
 
 ```bash
+# Desarrollo local (backend en localhost)
+NEXT_PUBLIC_API_URL=http://localhost:8000/api
+
+# Producción (Servidor Tailscale)
+NEXT_PUBLIC_API_URL=https://cmxserver.curlew-vector.ts.net/cmx/api
+```
+
+### Despliegue en Vercel
+
+En el dashboard de Vercel, añade la variable de entorno:
+
+```
+NEXT_PUBLIC_API_URL=https://cmxserver.curlew-vector.ts.net/cmx/api
+```
+
+## 📡 Endpoints del Backend
+
+| Recurso | Endpoint |
+|---------|----------|
+| Productos | `/api/catalogo/productos/` |
+| Categorías | `/api/catalogo/categorias/` |
+| Producto específico | `/api/catalogo/productos/{slug}/` |
+| Productos relacionados | `/api/catalogo/productos/relacionados/{categoria}/` |
+| Info empresa | `/api/empresa/info/` |
+
+## 💻 Desarrollo Local
+
+```bash
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
 npm run dev
-# o
-yarn dev
-# o
-pnpm dev
-# o
-bun dev
+
+# Construir para producción
+npm run build
+
+# Iniciar producción local
+npm start
+```
+
+## 🔗 Dominios
+
+- **Frontend:** https://controlmodularmx.com
+- **Backend API:** https://cmxserver.curlew-vector.ts.net/cmx/api
+
+## 📁 Estructura
+
+```
+app/
+├── lib/config.ts          # Configuración de API
+├── page.tsx              # Página principal
+├── productos/            # Catálogo de productos
+│   ├── page.tsx          # Listado
+│   └── tarjeta-rebanadora-bizerba/  # Detalle producto
+├── nosotros/page.tsx      # Página nosotros (datos desde API)
+└── contacto/page.tsx     # Página de contacto
+```
+
+## 🔒 Seguridad
+
+- CORS configurado para permitir peticiones desde dominios específicos
+- Tokens CSRF en formularios del admin
+- Variables de entorno para configuración sensible

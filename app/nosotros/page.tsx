@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from 'next/navigation';
+import { API_URL } from "../lib/config";
 
 // --- SEO TÉCNICO: METADATA DINÁMICA ---
 export async function generateMetadata(): Promise<Metadata> {
@@ -15,9 +16,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 // --- CONSUMO DE API REAL (DJANGO) ---
 async function getEmpresaData() {
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
   try {
-    const res = await fetch(`${apiUrl}/empresa/info/`, {
+    const res = await fetch(`${API_URL}/empresa/info/`, {
       next: { revalidate: 3600 } // Cache por 1 hora
     });
     if (!res.ok) return null;
