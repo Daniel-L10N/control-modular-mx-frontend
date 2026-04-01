@@ -10,12 +10,18 @@ export async function generateMetadata(): Promise<Metadata> {
   const product = await getProductData();
   if (!product) return { title: 'Producto no encontrado' };
 
+  const productUrl = `https://controlmodularmx.com/productos/${product.slug}`;
+
   return {
     title: `${product.meta_titulo || product.nombre} | Control Modular MX`,
     description: product.meta_descripcion || product.descripcion_corta,
+    alternates: {
+      canonical: productUrl,
+    },
     openGraph: {
       title: product.nombre,
       description: product.descripcion_corta,
+      url: productUrl,
       images: product.imagenes?.[0]?.imagen ? [product.imagenes[0].imagen] : [],
     }
   };
