@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/app/components/Navegacion/Navbar";
 import Footer from "@/app/components/Navegacion/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "Control Modular MX | Tarjeta Rebanadora Bizerba e Ingeniería Industrial",
@@ -42,6 +43,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );
