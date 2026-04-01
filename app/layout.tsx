@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Control Modular MX | Tarjeta Rebanadora Bizerba e Ingeniería Industrial",
   description: "Especialistas en Tarjeta Bizerba y refacciones electrónicas. Diseño de tarjetas PCB, automatización de procesos y software industrial en México.",
   keywords: ["Tarjeta Bizerba", "Tarjeta Rebanadora Bizerba", "Bizerba México", "Refacciones Bizerba", "Control Modular MX", "Diseño PCB", "Automatización Industrial"],
+  verification: {
+    google: "Unsax41OkawvIslWNHGKUNDEXo4iQH6VQE8Yzeo5yi4",
+  },
   openGraph: {
     title: 'Control Modular MX | Tarjeta Rebanadora Bizerba',
     description: 'Especialistas en Tarjeta Bizerba y refacciones electrónicas industriales.',
