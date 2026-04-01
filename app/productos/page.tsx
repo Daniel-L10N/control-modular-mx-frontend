@@ -64,7 +64,7 @@ export default async function ProductosPage() {
                       Ver Detalles y Ficha Técnica
                     </Link>
                     <div className="text-2xl font-black text-indigo-600">
-                      ${product.price} <span className="text-sm text-gray-400 font-normal">{product.moneda || 'MXN'}</span>
+                      ${product.precio} <span className="text-sm text-gray-400 font-normal">{product.moneda || 'MXN'}</span>
                     </div>
                   </div>
                 </div>

@@ -72,7 +72,7 @@ export default async function ProductoDetallePage() {
       "@type": "Offer",
       "url": `https://controlmodularmx.com/productos/${product.slug}`,
       "priceCurrency": product.moneda,
-      "price": product.price,
+      "price": product.precio,
       "availability": product.estado_stock === 'disponible' ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
       "seller": {
         "@type": "Organization",
