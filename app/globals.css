@@ -67,12 +67,11 @@ body {
   }
 }
 
-/* Logo DanIT - glowing effect from company_portfolio */
+/* Logo DanIT - glowing effect */
 .logo-danit {
   cursor: pointer;
   border: none;
   padding: 2px 12px;
-  color: rgb(242, 255, 240);
   font-weight: bold;
   position: relative;
   border-radius: 12px;
