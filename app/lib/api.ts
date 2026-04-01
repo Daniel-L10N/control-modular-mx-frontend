@@ -42,7 +42,9 @@ async function fetchApi<T>(
   endpoint: string,
   options: RequestInit = {}
 ): Promise<T> {
-  const url = `${API_URL}${endpoint}`;
+  // Ensure endpoint starts with /
+  const normalizedEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+  const url = `${API_URL}${normalizedEndpoint}`;
   
   try {
     const response = await fetch(url, {
@@ -87,7 +89,7 @@ export async function getProducts(
   if (filters.ordering) params.append('ordering', filters.ordering);
 
   const queryString = params.toString();
-  const endpoint = queryString ? `/productos/?${queryString}` : '/productos/';
+  const endpoint = queryString ? `/catalogo/productos/?${queryString}` : '/catalogo/productos/';
   
   return fetchApi<PaginatedResponse<ProductListItem>>(endpoint);
 }
@@ -98,7 +100,7 @@ export async function getProducts(
  * @returns Full product details
  */
 export async function getProductBySlug(slug: string): Promise<Product> {
-  return fetchApi<Product>(`/productos/${slug}/`);
+  return fetchApi<Product>(`/catalogo/productos/${slug}/`);
 }
 
 /**
@@ -107,7 +109,7 @@ export async function getProductBySlug(slug: string): Promise<Product> {
  * @returns Full product details
  */
 export async function getProductById(id: number): Promise<Product> {
-  return fetchApi<Product>(`/productos/${id}/`);
+  return fetchApi<Product>(`/catalogo/productos/${id}/`);
 }
 
 /**
@@ -117,7 +119,7 @@ export async function getProductById(id: number): Promise<Product> {
  */
 export async function getFeaturedProducts(limit: number = 6): Promise<ProductListItem[]> {
   const response = await fetchApi<PaginatedResponse<ProductListItem>>(
-    `/productos/?disponible=true&ordering=-fecha_actualizacion&limit=${limit}`
+    `/catalogo/productos/?disponible=true&ordering=-fecha_actualizacion&limit=${limit}`
   );
   return response.results;
 }
@@ -127,7 +129,7 @@ export async function getFeaturedProducts(limit: number = 6): Promise<ProductLis
  * @returns Array of categories
  */
 export async function getCategories(): Promise<CategoryListItem[]> {
-  return fetchApi<CategoryListItem[]>('/categorias/');
+  return fetchApi<CategoryListItem[]>('/catalogo/categorias/');
 }
 
 /**
@@ -136,7 +138,7 @@ export async function getCategories(): Promise<CategoryListItem[]> {
  * @returns Category details
  */
 export async function getCategoryBySlug(slug: string): Promise<Category> {
-  return fetchApi<Category>(`/categorias/${slug}/`);
+  return fetchApi<Category>(`/catalogo/categorias/${slug}/`);
 }
 
 /**
@@ -160,7 +162,7 @@ export async function getProductsByCategory(
   if (filters.ordering) params.append('ordering', filters.ordering);
 
   return fetchApi<PaginatedResponse<ProductListItem>>(
-    `/productos/?${params.toString()}`
+    `/catalogo/productos/?${params.toString()}`
   );
 }
 
@@ -175,7 +177,7 @@ export async function searchProducts(
   limit: number = 20
 ): Promise<ProductListItem[]> {
   const response = await fetchApi<PaginatedResponse<ProductListItem>>(
-    `/productos/?search=${encodeURIComponent(query)}&limit=${limit}`
+    `/catalogo/productos/?search=${encodeURIComponent(query)}&limit=${limit}`
   );
   return response.results;
 }
@@ -186,7 +188,7 @@ export async function searchProducts(
  */
 export async function getAllProductSlugs(): Promise<string[]> {
   const response = await fetchApi<PaginatedResponse<ProductListItem>>(
-    '/productos/?fields=slug&limit=1000'
+    '/catalogo/productos/?fields=slug&limit=1000'
   );
   return response.results.map(p => p.slug);
 }
@@ -197,7 +199,7 @@ export async function getAllProductSlugs(): Promise<string[]> {
  */
 export async function getAllCategorySlugs(): Promise<string[]> {
   const response = await fetchApi<PaginatedResponse<CategoryListItem>>(
-    '/categorias/?fields=slug'
+    '/catalogo/categorias/?fields=slug'
   );
   return response.results.map(c => c.slug);
 }
