@@ -1,14 +1,14 @@
 /**
  * Dynamic Product Page - Phase 4: SEO Improvements
  * Displays individual product details with full SEO optimization
- * Uses SSG with generateStaticParams and ISR for known products
+ * Uses dynamic rendering to support any product slug from the API
  */
 
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { getProductBySlug, getAllProductSlugs } from '@/app/lib/api';
+import { getProductBySlug, getProducts } from '@/app/lib/api';
 import { generateProductJSONLD, generateBreadcrumbJSONLD, generateMetadata as generateSeoMetadata } from '@/app/lib/seo';
 import type { Product } from '@/app/types/product';
 
@@ -16,16 +16,8 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-// Static generation params for known products
-export async function generateStaticParams() {
-  try {
-    const slugs = await getAllProductSlugs();
-    return slugs.map((slug) => ({ slug }));
-  } catch (error) {
-    console.error('Error fetching product slugs:', error);
-    return [];
-  }
-}
+// Dynamic rendering - no static generation for product pages
+export const dynamic = 'force-dynamic';
 
 // Generate metadata for SEO
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

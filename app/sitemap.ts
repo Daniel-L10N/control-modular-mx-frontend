@@ -4,6 +4,15 @@ import type { ProductListItem } from "@/app/types/product";
 
 const BASE_URL = "https://controlmodularmx.com";
 
+// Fallback slugs en caso de que la API no esté disponible durante el build
+// Estos se agregan dinámicamente si el fetch falla
+const FALLBACK_SLUGS = [
+  'tarjeta-rebanadora-bizerba',
+  'tarjeta-rebanadora-bizerba-gsp',
+];
+
+export const dynamic = 'force-dynamic';
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Fetch all products from the Django API
   let products: ProductListItem[] = [];
@@ -13,6 +22,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     products = response.results;
   } catch (error) {
     console.error("Error fetching products for sitemap:", error);
+    // Si falla, usar fallback slugs
+    products = FALLBACK_SLUGS.map((slug, index) => ({
+      id: index + 1,
+      nombre: slug,
+      slug: slug,
+      sku: `CMX-FALLBACK-${index + 1}`,
+      precio: 0,
+      moneda: 'MXN',
+      estado_stock: 'disponible' as const,
+      disponible: true,
+      descripcion_corta: 'Producto de fallback',
+      fecha_actualizacion: new Date().toISOString(),
+    }));
   }
 
   // Static URLs
