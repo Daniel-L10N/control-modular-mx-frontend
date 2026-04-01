@@ -21,16 +21,15 @@ export default function ContactoPage() {
   };
 
   return (
-    <main className="bg-slate-50 min-h-screen">
+    <main className="bg-gray-50 min-h-screen">
       
       {/* HEADER DE CONTACTO */}
-      <div className="bg-slate-900 text-white py-24 sm:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
+      <div className="bg-gray-900 text-white py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-white">
             Diseñemos el futuro de tu planta
           </h1>
-          <p className="mt-6 text-lg leading-8 text-slate-300 max-w-2xl mx-auto">
+          <p className="mt-6 text-lg leading-8 text-gray-300 max-w-2xl mx-auto">
             ¿Tienes un problema de automatización, requieres desarrollo de hardware a la medida o necesitas digitalizar tus procesos? Hablemos de ingeniería.
           </p>
         </div>
@@ -42,16 +41,16 @@ export default function ContactoPage() {
           
           {/* COLUMNA IZQUIERDA: INFORMACIÓN DIRECTA */}
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900">
+            <h2 className="text-3xl font-bold tracking-tight text-sla-te-900">
               Información de Contacto
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-sla-te-600">
               Nuestro equipo de ingeniería binacional está listo para analizar tus requerimientos técnicos y ofrecerte una solución escalable.
             </p>
 
             <dl className="mt-10 space-y-8">
               {/* WhatsApp (Botón de Acción Directa) */}
-              <div className="flex gap-x-4 items-center p-6 bg-white rounded-xl shadow-sm border border-slate-100 hover:border-indigo-100 transition-colors">
+              <div className="flex gap-x-4 items-center p-6 bg-white rounded-xl shadow-sm border border-sla-te-100 hover:border-indigo-100 transition-colors">
                 <dt className="flex-none">
                   <span className="sr-only">WhatsApp</span>
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-green-50">
@@ -59,7 +58,7 @@ export default function ContactoPage() {
                   </div>
                 </dt>
                 <dd>
-                  <p className="text-sm font-semibold text-slate-900">Soporte y Ventas Inmediatas</p>
+                  <p className="text-sm font-semibold text-sla-te-900">Soporte y Ventas Inmediatas</p>
                   <a 
                     href="https://wa.me/525525686595?text=Hola%20ingenieros%20de%20Control%20Modular,%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto." 
                     target="_blank" 
@@ -68,12 +67,12 @@ export default function ContactoPage() {
                   >
                     +52 552 568 6595
                   </a>
-                  <p className="text-sm text-slate-500 mt-1">Lunes a Viernes de 9:00am a 6:00pm</p>
+                  <p className="text-sm text-sla-te-500 mt-1">Lunes a Viernes de 9:00am a 6:00pm</p>
                 </dd>
               </div>
 
               {/* Correo Electrónico */}
-              <div className="flex gap-x-4 items-center p-6 bg-white rounded-xl shadow-sm border border-slate-100">
+              <div className="flex gap-x-4 items-center p-6 bg-white rounded-xl shadow-sm border border-sla-te-100">
                 <dt className="flex-none">
                   <span className="sr-only">Correo electrónico</span>
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-indigo-50">
@@ -81,7 +80,7 @@ export default function ContactoPage() {
                   </div>
                 </dt>
                 <dd>
-                  <p className="text-sm font-semibold text-slate-900">Envíanos tus especificaciones</p>
+                  <p className="text-sm font-semibold text-sla-te-900">Envíanos tus especificaciones</p>
                   <a href="mailto:controlmodularmx@gmail.com" className="text-lg font-bold text-indigo-600 hover:text-indigo-500 mt-1 block">
                     controlmodularmx@gmail.com
                   </a>
@@ -89,24 +88,24 @@ export default function ContactoPage() {
               </div>
 
               {/* Ubicación */}
-              <div className="flex gap-x-4 items-center p-6 bg-white rounded-xl shadow-sm border border-slate-100">
+              <div className="flex gap-x-4 items-center p-6 bg-white rounded-xl shadow-sm border border-sla-te-100">
                 <dt className="flex-none">
                   <span className="sr-only">Ubicación</span>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-100">
-                    <MapPinIcon className="h-6 w-6 text-slate-600" aria-hidden="true" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-sla-te-100">
+                    <MapPinIcon className="h-6 w-6 text-sla-te-600" aria-hidden="true" />
                   </div>
                 </dt>
                 <dd>
-                  <p className="text-sm font-semibold text-slate-900">Oficinas Centrales</p>
-                  <p className="text-lg font-medium text-slate-700 mt-1">Atenco, Estado de México</p>
-                  <p className="text-sm text-slate-500 mt-1">Cobertura nacional e internacional</p>
+                  <p className="text-sm font-semibold text-sla-te-900">Oficinas Centrales</p>
+                  <p className="text-lg font-medium text-sla-te-700 mt-1">Atenco, Estado de México</p>
+                  <p className="text-sm text-sla-te-500 mt-1">Cobertura nacional e internacional</p>
                 </dd>
               </div>
             </dl>
           </div>
 
           {/* COLUMNA DERECHA: FORMULARIO DE PROYECTO */}
-          <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
+          <div className="bg-white p-8 rounded-2xl shadow-lg border border-sla-te-100">
             {formStatus === 'success' ? (
               <div className="h-full flex flex-col items-center justify-center text-center space-y-4 py-12">
                 <div className="h-16 w-16 bg-green-100 rounded-full flex items-center justify-center">
@@ -114,8 +113,8 @@ export default function ContactoPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900">¡Mensaje Recibido!</h3>
-                <p className="text-slate-600">
+                <h3 className="text-2xl font-bold text-sla-te-900">¡Mensaje Recibido!</h3>
+                <p className="text-sla-te-600">
                   Un ingeniero de nuestro equipo analizará tu solicitud y se pondrá en contacto contigo a la brevedad.
                 </p>
                 <button 
@@ -129,16 +128,16 @@ export default function ContactoPage() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="nombre" className="block text-sm font-medium text-slate-900">Nombre completo</label>
+                    <label htmlFor="nombre" className="block text-sm font-medium text-sla-te-900">Nombre completo</label>
                     <input type="text" id="nombre" name="nombre" required
-                      className="mt-2 block w-full rounded-md border-0 py-2.5 px-3 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+                      className="mt-2 block w-full rounded-md border-0 py-2.5 px-3 text-sla-te-900 shadow-sm ring-1 ring-inset ring-sla-te-300 placeholder:text-sla-te-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
                       placeholder="Ej. Ing. Daniel"
                     />
                   </div>
                   <div>
-                    <label htmlFor="empresa" className="block text-sm font-medium text-slate-900">Empresa / Industria</label>
+                    <label htmlFor="empresa" className="block text-sm font-medium text-sla-te-900">Empresa / Industria</label>
                     <input type="text" id="empresa" name="empresa" required
-                      className="mt-2 block w-full rounded-md border-0 py-2.5 px-3 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+                      className="mt-2 block w-full rounded-md border-0 py-2.5 px-3 text-sla-te-900 shadow-sm ring-1 ring-inset ring-sla-te-300 placeholder:text-sla-te-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
                       placeholder="Nombre de tu empresa"
                     />
                   </div>
@@ -146,24 +145,24 @@ export default function ContactoPage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-slate-900">Correo electrónico</label>
+                    <label htmlFor="email" className="block text-sm font-medium text-sla-te-900">Correo electrónico</label>
                     <input type="email" id="email" name="email" required
-                      className="mt-2 block w-full rounded-md border-0 py-2.5 px-3 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+                      className="mt-2 block w-full rounded-md border-0 py-2.5 px-3 text-sla-te-900 shadow-sm ring-1 ring-inset ring-sla-te-300 placeholder:text-sla-te-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
                       placeholder="tu@empresa.com"
                     />
                   </div>
                   <div>
-                    <label htmlFor="telefono" className="block text-sm font-medium text-slate-900">Teléfono (WhatsApp)</label>
+                    <label htmlFor="telefono" className="block text-sm font-medium text-sla-te-900">Teléfono (WhatsApp)</label>
                     <input type="tel" id="telefono" name="telefono"
-                      className="mt-2 block w-full rounded-md border-0 py-2.5 px-3 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+                      className="mt-2 block w-full rounded-md border-0 py-2.5 px-3 text-sla-te-900 shadow-sm ring-1 ring-inset ring-sla-te-300 placeholder:text-sla-te-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
                       placeholder="+52 55..."
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="servicio" className="block text-sm font-medium text-slate-900">Tipo de Servicio Requerido</label>
-                  <select id="servicio" name="servicio" className="mt-2 block w-full rounded-md border-0 py-2.5 px-3 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-white">
+                  <label htmlFor="servicio" className="block text-sm font-medium text-sla-te-900">Tipo de Servicio Requerido</label>
+                  <select id="servicio" name="servicio" className="mt-2 block w-full rounded-md border-0 py-2.5 px-3 text-sla-te-900 shadow-sm ring-1 ring-inset ring-sla-te-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-white">
                     <option>Desarrollo de Hardware (PCB)</option>
                     <option>Software Industrial / Nube</option>
                     <option>Domótica y Control de Accesos</option>
@@ -174,9 +173,9 @@ export default function ContactoPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="mensaje" className="block text-sm font-medium text-slate-900">Detalles técnicos del proyecto</label>
+                  <label htmlFor="mensaje" className="block text-sm font-medium text-sla-te-900">Detalles técnicos del proyecto</label>
                   <textarea id="mensaje" name="mensaje" rows={4} required
-                    className="mt-2 block w-full rounded-md border-0 py-2.5 px-3 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+                    className="mt-2 block w-full rounded-md border-0 py-2.5 px-3 text-sla-te-900 shadow-sm ring-1 ring-inset ring-sla-te-300 placeholder:text-sla-te-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
                     placeholder="Describe el problema a resolver o las especificaciones técnicas..."
                   />
                 </div>
