@@ -61,11 +61,11 @@ export default async function NosotrosPage() {
           
           {/* Imagen Lateral (Podrías hacerla dinámica también en el futuro) */}
           <div className="relative sm:py-16 lg:py-0">
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl h-[400px] lg:h-[600px]">
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl h-[400px] lg:h-[600px] bg-slate-100">
               <img
                 className="absolute inset-0 h-full w-full object-cover"
-                src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=1440&q=80"
-                alt="Ingeniería en Control Modular MX"
+                src={data.historia_imagen || "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=1440&q=80"}
+                alt="Nuestra historia en Control Modular MX"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 opacity-80" />
               <div className="absolute bottom-0 left-0 p-8">
