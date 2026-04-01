@@ -2,10 +2,10 @@ import Link from 'next/link';
 
 const projects = [
   {
-    title: 'Retrofitting para Rebanadoras Bizerba',
+    title: 'Tarjeta Bizerba: Retrofitting para Rebanadoras',
     category: { name: 'Hardware PCB', color: 'text-indigo-600 bg-indigo-50' },
     description:
-      'Desarrollo de tarjeta de control electrónica a la medida para maquinaria alemana Bizerba. Eliminamos la dependencia de refacciones de importación lentas y costosas, permitiendo a empresas de mantenimiento dar servicio ágil a grandes cadenas industriales y centros de distribución, manteniendo intactas las normas de seguridad de fábrica.',
+      'Diseño y fabricación de la Tarjeta Bizerba a la medida para maquinaria alemana. Nuestra tarjeta rebanadora Bizerba elimina la dependencia de refacciones electrónicas de importación lentas y costosas, permitiendo un servicio ágil a grandes cadenas industriales y centros de distribución.',
     impact: 'Cero tiempos de espera en importación.',
     imageUrl:
       'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80', // Placa electrónica / tecnología

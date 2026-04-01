@@ -33,12 +33,24 @@ export default function ProductosPage() {
 
         <div className="mt-16 space-y-24">
           {products.map((product) => (
-            <div key={product.id} className="lg:grid lg:grid-cols-2 lg:gap-x-12 lg:items-start">
+            <div key={product.id} className="lg:grid lg:grid-cols-2 lg:gap-x-12 lg:items-start" itemScope itemType="https://schema.org/Product">
+              {/* Schema Metadata for SEO */}
+              <meta itemProp="name" content={product.name} />
+              <meta itemProp="description" content={product.description} />
+              <meta itemProp="brand" content="Control Modular MX" />
+              <meta itemProp="image" content={product.imageSrc} />
+              <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
+                <meta itemProp="priceCurrency" content="MXN" />
+                <meta itemProp="availability" content="https://schema.org/InStock" />
+                <meta itemProp="url" content="https://controlmodularmx.com/productos" />
+              </div>
+
               {/* Product Image */}
               <div className="aspect-w-4 aspect-h-3 overflow-hidden rounded-3xl bg-gray-100 shadow-2xl">
                 <img
                   src={product.imageSrc}
                   alt={product.imageAlt}
+                  itemProp="image"
                   className="h-full w-full object-cover object-center"
                 />
               </div>
