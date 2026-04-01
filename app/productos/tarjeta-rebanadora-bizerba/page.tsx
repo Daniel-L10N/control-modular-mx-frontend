@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { WrenchScrewdriverIcon, CpuChipIcon } from '@heroicons/react/24/outline';
 import { notFound } from 'next/navigation';
+import { API_URL } from "../../lib/config";
 
 // --- SEO TÉCNICO: METADATA DINÁMICA ---
 // Nota: En producción, esto debería hacer un fetch rápido para obtener los metatítulos de la DB
@@ -9,12 +10,18 @@ export async function generateMetadata(): Promise<Metadata> {
   const product = await getProductData();
   if (!product) return { title: 'Producto no encontrado' };
 
+  const productUrl = `https://controlmodularmx.com/productos/${product.slug}`;
+
   return {
     title: `${product.meta_titulo || product.nombre} | Control Modular MX`,
     description: product.meta_descripcion || product.descripcion_corta,
+    alternates: {
+      canonical: productUrl,
+    },
     openGraph: {
       title: product.nombre,
       description: product.descripcion_corta,
+      url: productUrl,
       images: product.imagenes?.[0]?.imagen ? [product.imagenes[0].imagen] : [],
     }
   };
@@ -22,9 +29,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 // --- CONSUMO DE API REAL (DJANGO) ---
 async function getProductData() {
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
   try {
-    const res = await fetch(`${apiUrl}/catalogo/productos/tarjeta-rebanadora-bizerba/`, {
+    const res = await fetch(`${API_URL}/catalogo/productos/tarjeta-rebanadora-bizerba/`, {
       next: { revalidate: 3600 } // Cache por 1 hora (ISR)
     });
     if (!res.ok) return null;
@@ -36,9 +42,8 @@ async function getProductData() {
 }
 
 async function getRelatedProducts(categoriaSlug: string, currentSlug: string) {
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
   try {
-    const res = await fetch(`${apiUrl}/catalogo/productos/relacionados/${categoriaSlug}/?exclude=${currentSlug}`);
+    const res = await fetch(`${API_URL}/catalogo/productos/relacionados/${categoriaSlug}/?exclude=${currentSlug}`);
     if (!res.ok) return [];
     return res.json();
   } catch (error) {

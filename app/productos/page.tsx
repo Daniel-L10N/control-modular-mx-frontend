@@ -1,10 +1,10 @@
 import Link from "next/link";
+import { API_URL } from "../lib/config";
 
 // --- CONSUMO DE API REAL (DJANGO) ---
 async function getProducts() {
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api';
   try {
-    const res = await fetch(`${apiUrl}/catalogo/productos/`, {
+    const res = await fetch(`${API_URL}/catalogo/productos/`, {
       next: { revalidate: 60 } // Cache por 1 minuto para listados
     });
     if (!res.ok) return [];

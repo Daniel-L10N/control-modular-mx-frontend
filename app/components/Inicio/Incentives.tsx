@@ -3,17 +3,17 @@
 const incentives = [
   {
     title: 'Prototipado Electrónico Ágil',
-    imageSrc: 'https://tailwindui.com/img/ecommerce/icons/icon-shipping-simple.svg',
+    imageSrc: '/icons/icon-shipping-simple.svg',
     description: "No dependas de refacciones genéricas. Diseñamos y fabricamos tarjetas PCB a la medida exacta de tu maquinaria, listas para pruebas funcionales en tiempo récord.",
   },
   {
     title: 'Automatización a Medida',
-    imageSrc: 'https://tailwindui.com/img/ecommerce/icons/icon-warranty-simple.svg',
+    imageSrc: '/icons/icon-warranty-simple.svg',
     description: "Eliminamos las libretas y los procesos manuales. Desarrollamos software que se comunica directamente con tu hardware para automatizar tareas repetitivas y generar reportes precisos.",
   },
   {
     title: 'Soporte Técnico en Planta',
-    imageSrc: 'https://tailwindui.com/img/ecommerce/icons/icon-exchange-simple.svg',
+    imageSrc: '/icons/icon-exchange-simple.svg',
     description: "Al estar ubicados estratégicamente en Atenco, ofrecemops tiempos de respuesta inmediatos para mantenimiento predictivo y soporte directo en tus instalaciones.",
   },
 ]
