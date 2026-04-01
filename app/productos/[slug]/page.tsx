@@ -69,14 +69,17 @@ async function getProduct(slug: string): Promise<Product | null> {
   }
 }
 
-// Format price with currency
-function formatPrice(price: number, currency: string = 'MXN'): string {
+// Format price with currency - handles both number and string
+function formatPrice(price: number | string | undefined, currency: string = 'MXN'): string {
+  if (!price) return 'Consultar';
+  const numPrice = typeof price === 'string' ? parseFloat(price) : price;
+  if (isNaN(numPrice)) return 'Consultar';
   return new Intl.NumberFormat('es-MX', {
     style: 'currency',
     currency,
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
-  }).format(price);
+  }).format(numPrice);
 }
 
 // Get stock status text
@@ -130,13 +133,15 @@ function Breadcrumbs({
 }
 
 // Product gallery component
-function ProductGallery({ images, productName }: { images: Product['imagenes']; productName: string }) {
-  if (!images || images.length === 0) {
+function ProductGallery({ images, productName }: { images?: Product['imagenes']; productName?: string }) {
+  const name = productName || 'Producto';
+  
+    if (!images || images.length === 0) {
     return (
       <div className="aspect-w-4 aspect-h-3 rounded-3xl bg-gray-100 overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-          alt={productName}
+          alt={name}
           width={800}
           height={600}
           className="object-cover w-full h-full"
@@ -155,7 +160,7 @@ function ProductGallery({ images, productName }: { images: Product['imagenes']; 
       <div className="aspect-w-4 aspect-h-3 rounded-3xl bg-gray-100 overflow-hidden shadow-2xl">
         <Image
           src={primaryImage.imagen}
-          alt={primaryImage.alt_text || productName}
+          alt={primaryImage.alt_text || name}
           width={800}
           height={600}
           className="object-cover w-full h-full"
@@ -170,7 +175,7 @@ function ProductGallery({ images, productName }: { images: Product['imagenes']; 
             <div key={idx} className="aspect-w-1 aspect-h-1 rounded-xl bg-gray-100 overflow-hidden shadow-md">
               <Image
                 src={img.imagen}
-                alt={img.alt_text || `${productName} - imagen ${idx + 2}`}
+                alt={img.alt_text || `${name} - imagen ${idx + 2}`}
                 width={200}
                 height={200}
                 className="object-cover w-full h-full hover:scale-110 transition-transform duration-300"
@@ -184,7 +189,7 @@ function ProductGallery({ images, productName }: { images: Product['imagenes']; 
 }
 
 // Specifications table component
-function ProductSpecifications({ specifications }: { specifications: Product['especificaciones'] }) {
+function ProductSpecifications({ specifications }: { specifications?: Product['especificaciones'] }) {
   if (!specifications || specifications.length === 0) {
     return null;
   }
@@ -205,7 +210,7 @@ function ProductSpecifications({ specifications }: { specifications: Product['es
 }
 
 // Compatible models component
-function CompatibleModels({ models }: { models: string[] }) {
+function CompatibleModels({ models }: { models?: string[] }) {
   if (!models || models.length === 0) {
     return null;
   }
@@ -230,7 +235,7 @@ function CompatibleModels({ models }: { models: string[] }) {
 }
 
 // OEM Part numbers component
-function OEMNumbers({ oemNumbers }: { oemNumbers: string[] }) {
+function OEMNumbers({ oemNumbers }: { oemNumbers?: string[] }) {
   if (!oemNumbers || oemNumbers.length === 0) {
     return null;
   }
@@ -263,7 +268,17 @@ export default async function ProductPage({ params }: PageProps) {
   
   // Handle product not found
   if (!product) {
-    notFound();
+    return (
+      <div className="min-h-screen flex items-center justify-center pt-28">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Producto no encontrado</h1>
+          <p className="text-gray-600 mb-8">El producto que buscas no existe o ha sido eliminado.</p>
+          <a href="/productos" className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700">
+            Ver todos los productos
+          </a>
+        </div>
+      </div>
+    );
   }
   
   // Get category info
@@ -271,15 +286,20 @@ export default async function ProductPage({ params }: PageProps) {
   const categoryName = category?.nombre;
   const categorySlug = category?.slug;
   
+  // Prepare price for JSON-LD
+  const priceValue = typeof product.precio === 'string' 
+    ? parseFloat(product.precio) 
+    : (product.precio || 0);
+
   // Prepare JSON-LD structured data
   const productJsonLd = generateProductJSONLD({
     name: product.nombre,
-    description: product.descripcion_detallada || product.descripcion_corta,
+    description: product.descripcion_detallada || product.descripcion_corta || '',
     sku: product.sku,
     image: product.imagenes?.map(img => img.imagen) || [],
     offers: {
       '@type': 'Offer',
-      price: product.precio,
+      price: priceValue,
       priceCurrency: product.moneda || 'MXN',
       availability: product.estado_stock === 'disponible' 
         ? 'https://schema.org/InStock' 

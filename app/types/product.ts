@@ -60,14 +60,14 @@ export interface Product {
   slug: string;
   /** SKU or internal code */
   sku: string;
-  /** Price in MXN */
-  precio: number;
+  /** Price in MXN (can be string from API) */
+  precio: number | string;
   /** Currency code (default: 'MXN') */
   moneda: string;
   /** Stock status */
   estado_stock: StockStatus;
   /** Whether product is active on site */
-  disponible: boolean;
+  disponible?: boolean;
   /** SEO meta title (max 70 chars) */
   meta_titulo?: string;
   /** SEO meta description (max 160 chars) */
@@ -75,19 +75,19 @@ export interface Product {
   /** Short description for listings */
   descripcion_corta: string;
   /** Detailed technical description */
-  descripcion_detallada: string;
+  descripcion_detallada?: string;
   /** Compatible models (e.g., ['GSP H', 'H33']) */
-  modelos_compatibles: string[];
+  modelos_compatibles?: string[];
   /** OEM part numbers */
-  numeros_parte_oem: string[];
+  numeros_parte_oem?: string[];
   /** Product specifications */
   especificaciones?: Specification[];
   /** Product images */
   imagenes?: ProductImage[];
-  /** Creation timestamp */
-  fecha_creacion: string;
+  /** Creation timestamp (optional - not always returned) */
+  fecha_creacion?: string;
   /** Last update timestamp */
-  fecha_actualizacion: string;
+  fecha_actualizacion?: string;
 }
 
 /**
