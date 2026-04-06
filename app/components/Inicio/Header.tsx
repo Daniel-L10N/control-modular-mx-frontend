@@ -68,7 +68,7 @@ export default function Header() {
               Control Modular MX <br />
               <span className='text-white'>
                 <Typewriter
-                  words={['Transforma ideas en excelentes productos digitales.', 'Al servicio de usted y de su empresa.', 'Solutions what you needed!']}
+                  words={['Transforma ideas en productos digitales.', 'Al servicio de usted y de su empresa.', 'Soluciones que tu industria necesita.']}
                   loop={0}
                   cursor
                   cursorStyle='_'

@@ -9,32 +9,32 @@ import DotLoader from 'react-spinners/DotLoader';
 const solutions = [
   {
     name: 'Productos',
-    description: 'Measure actions your users take',
+    description: 'Conoce nuestros productos y refacciones',
     href: '/productos',
   },
   {
     name: 'Servicios',
-    description: 'Create your own targeted content',
+    description: 'Explora nuestros servicios de ingeniería',
     href: '/servicios',
   },
   {
     name: 'Nosotros',
-    description: 'Keep track of your growth',
+    description: 'Conoce nuestro equipo y valores',
     href: '/nosotros',
   },
   {
     name: 'Trabajos',
-    description: 'Keep track of your growth',
+    description: 'Casos de éxito y proyectos realizados',
     href: '/trabajos',
   },
   {
     name: 'Blog',
-    description: 'Keep track of your growth',
+    description: 'Artículos sobre tecnología e ingeniería',
     href: '/blog',
   },
   {
     name: 'Contacto',
-    description: 'Keep track of your growth',
+    description: 'Contáctanos para tu proyecto',
     href: '/contacto',
   },
 ];

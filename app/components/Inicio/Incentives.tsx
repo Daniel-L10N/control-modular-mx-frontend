@@ -14,7 +14,7 @@ const incentives = [
   {
     title: 'Soporte Técnico en Planta',
     imageSrc: '/icons/icon-exchange-simple.svg',
-    description: "Al estar ubicados estratégicamente en Atenco, ofrecemops tiempos de respuesta inmediatos para mantenimiento predictivo y soporte directo en tus instalaciones.",
+    description: "Al estar ubicados estratégicamente en Atenco, ofrecemos tiempos de respuesta inmediatos para mantenimiento predictivo y soporte directo en tus instalaciones.",
   },
 ]
 
