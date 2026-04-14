@@ -10,7 +10,7 @@ const solutions = [
   {
     name: 'Productos',
     description: 'Conoce nuestros productos y refacciones',
-    href: '/productos',
+    href: 'https://bizerba-refacciones.vercel.app/',
   },
   {
     name: 'Servicios',
