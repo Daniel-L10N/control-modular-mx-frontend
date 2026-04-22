@@ -2,19 +2,19 @@
 
 const incentives = [
   {
-    title: 'Prototipado Electrónico Ágil',
-    imageSrc: '/icons/icon-shipping-simple.svg',
-    description: "No dependas de refacciones genéricas. Diseñamos y fabricamos tarjetas PCB a la medida exacta de tu maquinaria, listas para pruebas funcionales en tiempo récord.",
+    title: 'Long-Term Partnership',
+    imageSrc: '/icons/Partnership.jpg',
+    description: 'We move beyond the "provider" role to become your technology partner. Our focus is on building robust, high-quality architectures (Frontend & Backend) that evolve alongside your business goals.',
   },
   {
-    title: 'Automatización a Medida',
-    imageSrc: '/icons/icon-warranty-simple.svg',
-    description: "Eliminamos las libretas y los procesos manuales. Desarrollamos software que se comunica directamente con tu hardware para automatizar tareas repetitivas y generar reportes precisos.",
+    title: 'Priority Technical Support',
+    imageSrc: '/icons/support.jpg',
+    description: 'Your uptime is our priority. As a partner, you get a direct line to our dev team, ensuring rapid response times and expert troubleshooting to keep your operations running 24/7',
   },
   {
-    title: 'Soporte Técnico en Planta',
-    imageSrc: '/icons/icon-exchange-simple.svg',
-    description: "Al estar ubicados estratégicamente en Atenco, ofrecemos tiempos de respuesta inmediatos para mantenimiento predictivo y soporte directo en tus instalaciones.",
+    title: 'Performance & Strategic Growthg',
+    imageSrc: '/icons/Performance.jpg',
+    description: 'Stay ahead of the competition with continuous speed optimization and strategic tech consulting during your first 3 months—completely free. We handle the complexity; you lead the growth.',
   },
 ]
 
@@ -25,10 +25,10 @@ export default function Incentives() {
         <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
           <div className="max-w-3xl">
             <h2 className="text-4xl font-bold tracking-tight text-gray-900">
-              ¿Por qué digitalizar tu industria con nosotros?
+              Why Partner with Us?
             </h2>
             <p className="mt-4 text-gray-500 leading-relaxed">
-              Vamos más allá de la simple instalación. Analizamos tu proceso operativo para detectar cuellos de botella y creamos el hardware y software necesario para que tu personal se enfoque en lo técnico, no en lo administrativo.
+              We don’t just deliver code; we build the engine for your digital growth. By choosing our Full-Stack expertise, you’re securing a scalable solution backed by a team committed to your long-term success.
             </p>
           </div>
           <div className="mt-16 grid grid-cols-1 gap-y-10 gap-x-8 lg:grid-cols-3">
