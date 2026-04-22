@@ -2,44 +2,44 @@ import Link from 'next/link';
 
 const projects = [
   {
-    title: 'Tarjeta Bizerba: Retrofitting para Rebanadoras',
-    category: { name: 'Hardware PCB', color: 'text-indigo-600 bg-indigo-50' },
+    title: 'Real-Time Logistics Insight Platform',
+    category: { name: 'Data Analytics / Full-Stack', color: 'text-indigo-600 bg-indigo-50' },
     description:
-      'Diseño y fabricación de la Tarjeta Bizerba a la medida para maquinaria alemana. Nuestra tarjeta rebanadora Bizerba elimina la dependencia de refacciones electrónicas de importación lentas y costosas, permitiendo un servicio ágil a grandes cadenas industriales y centros de distribución.',
-    impact: 'Cero tiempos de espera en importación.',
+      'We developed a custom SaaS dashboard for a regional logistics provider. The platform aggregates data from fleet GPS and warehouse inventory, converting raw numbers into actionable "Insights" for decision-makers.',
+    impact: '30% reduction in fuel costs through route optimization.',
     imageUrl:
-      'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80', // Placa electrónica / tecnología
+      '/icons/Logistics_platform.png', // Placa electrónica / tecnología
     href: '#',
   },
   {
-    title: 'Automatización de Bitácoras y Cotizaciones',
-    category: { name: 'Software Industrial', color: 'text-cyan-600 bg-cyan-50' },
+    title: 'Full-Stack E-Commerce / Digital Transformation',
+    category: { name: 'Category: Full-Stack E-Commerce / Digital Transformation', color: 'text-cyan-600 bg-cyan-50' },
     description:
-      'Desarrollo de plataforma estructurada por jerarquías para la gestión de tareas. Digitalizamos la creación de reportes de servicio técnico y cotizaciones. Un proceso administrativo manual que antes tomaba 2 horas, ahora se genera en solo 5 minutos con presionar un botón. Menos papel, cero errores humanos.',
-    impact: 'Reducción del 95% en tiempos administrativos.',
+      'A high-performance digital storefront engineered for maximum speed and conversion. It features a proprietary Real-Time Management System that achieves millisecond-level synchronization between physical branch inventory and the web platform. Additionally, it integrates an Automated Sales Logistics module that streamlines the entire fulfillment cycle—from checkout to final delivery—eliminating manual errors and bottlenecks.',
+    impact: 'Seamless omnichannel operations with 100% stock accuracy and a significantly reduced order processing time.',
     imageUrl:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80', // Pantalla con gráficas/dashboard
+      '/img/e-commerce.png', // E-commerce / Digitalización
     href: '#',
   },
   {
-    title: 'Control de Accesos e Instalaciones Inteligentes',
-    category: { name: 'Domótica / IoT', color: 'text-emerald-600 bg-emerald-50' },
+    title: 'Industrial Retrofitting & Logic Control',
+    category: { name: 'Hardware Engineering / Industrial IoT', color: 'text-emerald-600 bg-emerald-50' },
     description:
-      'Implementación de sistemas de automatización integral para la gestión de infraestructura. Centralizamos el control inteligente de luces, monitoreo de cámaras de seguridad, portones y puertas de acceso. Todo operado desde una interfaz unificada para maximizar la seguridad y la eficiencia energética.',
-    impact: 'Monitoreo total en tiempo real.',
+      'We designed a custom logic board for Bizerba industrial cutters, replacing obsolete German components with a locally manufactured, high-performance solution. This project involved reverse-engineering complex industrial logic to maintain 100% operational accuracy.',
+    impact: ' Extended equipment lifespan by 10+ years while providing the market with high-quality logic boards at only 1/4 of the original manufacturer s cost.',
     imageUrl:
-      'https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80', // Automatización / Domótica
-    href: '#',
+      '/bizerba.png', // Automatización / Domótica
+    href: 'https://bizerba-refacciones.vercel.app/',
   },
 ];
 
 export default function UseWorks() {
   return (
     <div className="relative bg-slate-50 px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28 border-t border-gray-200">
-      <div className="absolute inset-0">
-        <div className="h-1/3 bg-white sm:h-2/3" />
-      </div>
       
+        <div className="absolute inset-0">
+          <div className="h-1/3 bg-white sm:h-2/3" />
+        </div>
       <div className="relative mx-auto lg:mx-12 max-w-full">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Casos de Éxito en Ingeniería</h2>
@@ -50,11 +50,14 @@ export default function UseWorks() {
         
         <div className="mx-auto mt-16 grid max-w-lg gap-8 lg:max-w-none lg:grid-cols-3">
           {projects.map((project) => (
-            <div key={project.title} className="flex flex-col overflow-hidden rounded-xl shadow-lg border border-gray-100 bg-white hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group">
-              
-              {/* Imagen del Proyecto con efecto zoom suave */}
-              <div className="flex-shrink-0 overflow-hidden">
-                <img className="h-56 w-full object-cover group-hover:scale-105 transition-transform duration-500" src={project.imageUrl} alt={project.title} />
+            
+              <div key={project.title} className="flex flex-col overflow-hidden rounded-xl shadow-lg border border-gray-100 bg-white hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group">
+                
+                {/* Imagen del Proyecto con efecto zoom suave */}
+                <div className="flex-shrink-0 overflow-hidden">
+                <a href={project.href} target="_blank" rel="noopener noreferrer">
+                  <img className="h-56 w-full object-cover group-hover:scale-105 transition-transform duration-500" src={project.imageUrl} alt={project.title} />
+                  </a>
               </div>
               
               {/* Contenido Técnico */}
@@ -86,12 +89,12 @@ export default function UseWorks() {
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
           ))}
         </div>
       </div>
+      
     </div>
   )
 }
