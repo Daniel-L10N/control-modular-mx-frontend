@@ -51,15 +51,6 @@ export default function LogoCloud() {
           </div>
         </div>
       </div>
-      <style jsx>{`
-        @keyframes marquee {
-          0% { transform: translateX(100%); }
-          100% { transform: translateX(-100%); }
-        }
-        .animate-marquee {
-          animation: marquee 90s linear infinite;
-        }
-      `}</style>
     </div>
   )
 }
