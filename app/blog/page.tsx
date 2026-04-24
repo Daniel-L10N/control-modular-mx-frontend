@@ -4,7 +4,7 @@ const posts = [
   {
     id: 1,
     title: 'SEO vs. GEO: ¿Cómo aparecer en las recomendaciones de la Inteligencia Artificial?',
-    href: '#',
+    href: 'https://www.linkedin.com/posts/daniel-alejandro-lazo-lemus-023a03311_seo-vs-geo-ugcPost-7453343508322590720-OtUD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE9ZXFsBSx1KjzoZQVoTzKh8I2els2QhkPQ',
     description:
       '¿Sabías que la IA es la nueva herramienta de confianza para muchos usuarios? Aprende la diferencia entre las búsquedas tradicionales y las respuestas generativas para que tu negocio no sea invisible.',
     date: 'Abr 24, 2026',
