@@ -32,7 +32,23 @@ const posts = [
     imageUrl:
       '[https://avatars.githubusercontent.com/u/136534872?v=4](https://avatars.githubusercontent.com/u/136534872?v=4)',
   },
-}
+},
+{
+id: 3,
+title: 'Optimización de Procesos Industriales con Microcontroladores y PCBs Personalizados',
+href: '#',
+description:
+'Descubre por qué el diseño de hardware a medida supera a las soluciones genéricas en entornos industriales exigentes y cómo maximizar la durabilidad de tus sistemas.',
+date: 'Abr 27, 2026',
+datetime: '2026-04-27',
+category: { title: 'Ingeniería', href: '#' },
+author: {
+name: 'Daniel Alejandro Lazo',
+role: 'Especialista en Automatización',
+imageUrl:
+'https://avatars.githubusercontent.com/u/136534872?v=4',
+},
+},
   // Puedes agregar más objetos de post aquí en el futuro
   
 ];
