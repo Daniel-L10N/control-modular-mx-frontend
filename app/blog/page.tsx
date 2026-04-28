@@ -17,23 +17,24 @@ const posts = [
         'https://avatars.githubusercontent.com/u/136534872?v=4',
       },
   },
-  // Puedes agregar más objetos de post aquí en el futuro
   {
-    id: 1,
-    title: 'SEO vs. GEO: ¿Cómo aparecer en las recomendaciones de la Inteligencia Artificial?',
-    href: 'https://www.linkedin.com/posts/daniel-alejandro-lazo-lemus-023a03311_seo-vs-geo-ugcPost-7453343508322590720-OtUD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE9ZXFsBSx1KjzoZQVoTzKh8I2els2QhkPQ',
-    description:
-      '¿Sabías que la IA es la nueva herramienta de confianza para muchos usuarios? Aprende la diferencia entre las búsquedas tradicionales y las respuestas generativas para que tu negocio no sea invisible.',
-    date: 'Abr 24, 2026',
-    datetime: '2026-04-24',
-    category: { title: 'Tecnología', href: '#' },
-    author: {
-      name: 'Daniel Alejandro Lazo',
-      role: 'Especialista en Automatización',
-      imageUrl:
-        'https://avatars.githubusercontent.com/u/136534872?v=4',
-      },
+  id: 2,
+  title: 'Orquestación de IA y Sistemas Embebidos: El Futuro del Control Modular',
+  href: '#',
+  description:
+    'Explora cómo la integración de modelos de lenguaje locales y flujos de trabajo agénticos está transformando la eficiencia y autonomía en la industria del hardware.',
+  date: 'Abr 27, 2026',
+  datetime: '2026-04-27',
+  category: { title: 'Desarrollo y Hardware', href: '#' },
+  author: {
+    name: 'Daniel Alejandro Lazo',
+    role: 'Especialista en Automatización',
+    imageUrl:
+      '[https://avatars.githubusercontent.com/u/136534872?v=4](https://avatars.githubusercontent.com/u/136534872?v=4)',
   },
+}
+  // Puedes agregar más objetos de post aquí en el futuro
+  
 ];
 
 export default function BlogPage() {
