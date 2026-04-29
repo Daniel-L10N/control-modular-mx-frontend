@@ -49,6 +49,22 @@ imageUrl:
 'https://avatars.githubusercontent.com/u/136534872?v=4',
 },
 },
+{
+  id: 4,
+  title: 'Más allá de las Keywords: El Cambio hacia la Intencionalidad Semántica',
+  href: '#',
+  description: 'Ya no basta con repetir palabras clave. Descubre cómo estructurar tu contenido para que los motores de respuesta entiendan el contexto, la autoridad y la verdadera utilidad de tu información.',
+  date: 'Abr 29, 2026',
+  datetime: '2026-04-29',
+  category: { title: 'Estrategia Digital', href: '#' },
+  author: {
+    name: 'Daniel Alejandro Lazo',
+    role: 'Especialista en Automatización',
+    imageUrl: 'https://avatars.githubusercontent.com/u/136534872?v=4',
+  },
+  // NUEVA PROPIEDAD: Añades los conceptos específicos de este post
+  conceptosClave: ['SEO Semántico', 'Motores de Respuesta', 'Estructura de Datos']
+},
   // Puedes agregar más objetos de post aquí en el futuro
   
 ];
@@ -90,8 +106,8 @@ export default function BlogPage() {
                   {post.description}
                 </p>
               </div>
-              
               {/* Contenido extraído de tu video */}
+              
               <div className="mt-4 p-4 bg-blue-50 rounded-lg text-sm text-blue-800">
                 <p><strong>Conceptos clave:</strong></p>
                 <ul className="list-disc ml-5 mt-2">
