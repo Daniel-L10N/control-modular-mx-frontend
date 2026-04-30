@@ -1,70 +1,67 @@
 import React from 'react';
 
 const posts = [
-  {
-    id: 1,
-    title: 'SEO vs. GEO: ¿Cómo aparecer en las recomendaciones de la Inteligencia Artificial?',
-    href: 'https://www.linkedin.com/posts/daniel-alejandro-lazo-lemus-023a03311_seo-vs-geo-ugcPost-7453343508322590720-OtUD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE9ZXFsBSx1KjzoZQVoTzKh8I2els2QhkPQ',
-    description:
-      '¿Sabías que la IA es la nueva herramienta de confianza para muchos usuarios? Aprende la diferencia entre las búsquedas tradicionales y las respuestas generativas para que tu negocio no sea invisible.',
-    date: 'Abr 24, 2026',
-    datetime: '2026-04-24',
-    category: { title: 'Tecnología', href: '#' },
-    author: {
-      name: 'Daniel Alejandro Lazo',
-      role: 'Especialista en Automatización',
-      imageUrl:
-        'https://avatars.githubusercontent.com/u/136534872?v=4',
+    {
+      id: 1,
+      title: 'SEO vs. GEO: ¿Cómo aparecer en las recomendaciones de la Inteligencia Artificial?',
+      href: 'https://www.linkedin.com/posts/daniel-alejandro-lazo-lemus-023a03311_seo-vs-geo-ugcPost-7453343508322590720-OtUD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAE9ZXFsBSx1KjzoZQVoTzKh8I2els2QhkPQ',
+      description: '¿Sabías que la IA es la nueva herramienta de confianza para muchos usuarios? Aprende la diferencia entre las búsquedas tradicionales y las respuestas generativas para que tu negocio no sea invisible.',
+      date: 'Abr 24, 2026',
+      datetime: '2026-04-24',
+      category: { title: 'Tecnología', href: '#' },
+      author: {
+        name: 'Daniel Alejandro Lazo',
+        role: 'Especialista en Automatización',
+        imageUrl: 'https://avatars.githubusercontent.com/u/136534872?v=4',
       },
-  },
-  {
-  id: 2,
-  title: 'Orquestación de IA y Sistemas Embebidos: El Futuro del Control Modular',
-  href: '#',
-  description:
-    'Explora cómo la integración de modelos de lenguaje locales y flujos de trabajo agénticos está transformando la eficiencia y autonomía en la industria del hardware.',
-  date: 'Abr 27, 2026',
-  datetime: '2026-04-27',
-  category: { title: 'Desarrollo y Hardware', href: '#' },
-  author: {
-    name: 'Daniel Alejandro Lazo',
-    role: 'Especialista en Automatización',
-    imageUrl:
-      '[https://avatars.githubusercontent.com/u/136534872?v=4](https://avatars.githubusercontent.com/u/136534872?v=4)',
-  },
-},
-{
-id: 3,
-title: 'Optimización de Procesos Industriales con Microcontroladores y PCBs Personalizados',
-href: '#',
-description:
-'Descubre por qué el diseño de hardware a medida supera a las soluciones genéricas en entornos industriales exigentes y cómo maximizar la durabilidad de tus sistemas.',
-date: 'Abr 27, 2026',
-datetime: '2026-04-27',
-category: { title: 'Ingeniería', href: '#' },
-author: {
-name: 'Daniel Alejandro Lazo',
-role: 'Especialista en Automatización',
-imageUrl:
-'https://avatars.githubusercontent.com/u/136534872?v=4',
-},
-},
-{
-  id: 4,
-  title: 'Más allá de las Keywords: El Cambio hacia la Intencionalidad Semántica',
-  href: '#',
-  description: 'Ya no basta con repetir palabras clave. Descubre cómo estructurar tu contenido para que los motores de respuesta entiendan el contexto, la autoridad y la verdadera utilidad de tu información.',
-  date: 'Abr 29, 2026',
-  datetime: '2026-04-29',
-  category: { title: 'Estrategia Digital', href: '#' },
-  author: {
-    name: 'Daniel Alejandro Lazo',
-    role: 'Especialista en Automatización',
-    imageUrl: 'https://avatars.githubusercontent.com/u/136534872?v=4',
-  },
-  // NUEVA PROPIEDAD: Añades los conceptos específicos de este post
-  conceptosClave: ['SEO Semántico', 'Motores de Respuesta', 'Estructura de Datos']
-},
+      conceptosClave: ['SEO: Búsqueda tradicional', 'GEO: Respuestas directas de IA'],
+    },
+    {
+      id: 2,
+      title: 'Orquestación de IA y Sistemas Embebidos: El Futuro del Control Modular',
+      href: '#',
+      description: 'Explora cómo la integración de modelos de lenguaje locales y flujos de trabajo agénticos está transformando la eficiencia y autonomía en la industria del hardware.',
+      date: 'Abr 27, 2026',
+      datetime: '2026-04-27',
+      category: { title: 'Desarrollo y Hardware', href: '#' },
+      author: {
+        name: 'Daniel Alejandro Lazo',
+        role: 'Especialista en Automatización',
+        imageUrl: 'https://avatars.githubusercontent.com/u/136534872?v=4',
+      },
+      conceptosClave: ['Modelos Locales (Ollama)', 'Agentes Autónomos', 'Integración Hardware'],
+    },
+    {
+      id: 3,
+      title: 'Optimización de Procesos Industriales con Microcontroladores y PCBs Personalizados',
+      href: '#',
+      description: 'Descubre por qué el diseño de hardware a medida supera a las soluciones genéricas en entornos industriales exigentes y cómo maximizar la durabilidad de tus sistemas.',
+      date: 'Abr 27, 2026',
+      datetime: '2026-04-27',
+      category: { title: 'Ingeniería', href: '#' },
+      author: {
+        name: 'Daniel Alejandro Lazo',
+        role: 'Especialista en Automatización',
+        imageUrl: 'https://avatars.githubusercontent.com/u/136534872?v=4',
+      },
+      conceptosClave: ['Diseño de PCBs', 'Microcontroladores Atmel/ESP32', 'Control Industrial'],
+    },
+    {
+      id: 4,
+      title: 'Más allá de las Keywords: El Cambio hacia la Intencionalidad Semántica',
+      href: '#',
+      description: 'Ya no basta con repetir palabras clave. Descubre cómo estructurar tu contenido para que los motores de respuesta entiendan el contexto, la autoridad y la verdadera utilidad de tu información.',
+      date: 'Abr 29, 2026',
+      datetime: '2026-04-29',
+      category: { title: 'Estrategia Digital', href: '#' },
+      author: {
+        name: 'Daniel Alejandro Lazo',
+        role: 'Especialista en Automatización',
+        imageUrl: 'https://avatars.githubusercontent.com/u/136534872?v=4',
+      },
+      conceptosClave: ['SEO Semántico', 'Motores de Respuesta', 'Estructura de Datos'],
+    },
+  
   // Puedes agregar más objetos de post aquí en el futuro
   
 ];
@@ -108,13 +105,19 @@ export default function BlogPage() {
               </div>
               {/* Contenido extraído de tu video */}
               
-              <div className="mt-4 p-4 bg-blue-50 rounded-lg text-sm text-blue-800">
-                <p><strong>Conceptos clave:</strong></p>
-                <ul className="list-disc ml-5 mt-2">
-                  <li><strong>SEO:</strong> Respuesta de búsqueda tradicional [1].</li>
-                  <li><strong>GEO:</strong> Respuesta directa que nos entrega la IA [1].</li>
-                </ul>
-              </div>
+              {/* Sección Dinámica de Conceptos Clave */}
+{post.conceptosClave && post.conceptosClave.length > 0 && (
+  <div className="mt-4 p-4 bg-blue-50 rounded-lg text-sm text-blue-800 w-full">
+    <p className="font-bold border-b border-blue-200 pb-1 mb-2">Conceptos clave:</p>
+    <ul className="list-disc ml-5 space-y-1">
+      {post.conceptosClave.map((concepto, index) => (
+        <li key={index} className="font-medium">
+          {concepto}
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
 
               <div className="relative mt-8 flex items-center gap-x-4">
                 <img src={post.author.imageUrl} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
