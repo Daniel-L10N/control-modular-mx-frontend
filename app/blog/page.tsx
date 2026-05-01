@@ -61,6 +61,51 @@ const posts = [
       },
       conceptosClave: ['SEO Semántico', 'Motores de Respuesta', 'Estructura de Datos'],
     },
+    {
+      id: 5,
+      title: 'Fibra Óptica vs. Cobre: ¿Por qué el futuro de las redes es de cristal?',
+      href: '#',
+      description: 'Descubre las diferencias fundamentales entre las conexiones tradicionales y la fibra óptica. Aprende cómo la transmisión mediante pulsos de luz garantiza un ancho de banda superior y una latencia mínima.',
+      date: 'May 01, 2026',
+      datetime: '2026-05-01',
+      category: { title: 'Infraestructura', href: '#' },
+      author: {
+        name: 'Daniel Alejandro Lazo',
+        role: 'Especialista en Automatización',
+        imageUrl: 'https://avatars.githubusercontent.com/u/136534872?v=4',
+      },
+      conceptosClave: ['Fibra Óptica', 'Ancho de Banda', 'Transmisión de Luz', 'Latencia'],
+    },
+    {
+      id: 6,
+      title: 'Redes Industriales: La Inmunidad de la Fibra ante el Ruido Electromagnético',
+      href: '#',
+      description: 'En entornos de automatización con alta interferencia, el cableado tradicional puede fallar. Explora cómo la naturaleza dieléctrica de la fibra asegura la integridad de los datos entre PLCs y sistemas de control.',
+      date: 'May 01, 2026',
+      datetime: '2026-05-01',
+      category: { title: 'Automatización Industrial', href: '#' },
+      author: {
+        name: 'Daniel Alejandro Lazo',
+        role: 'Especialista en Automatización',
+        imageUrl: 'https://avatars.githubusercontent.com/u/136534872?v=4',
+      },
+      conceptosClave: ['Interferencia (EMI)', 'Redes Industriales', 'Aislamiento Dieléctrico', 'PLCs'],
+    },
+    {
+      id: 7,
+      title: 'Redes FTTH: ¿Qué hay detrás del internet de altísima velocidad que llega a tu empresa?',
+      href: '#',
+      description: 'Comprende la arquitectura "Fiber To The Home/Premises" (FTTH/FTTP) y cómo las redes ópticas pasivas (PON) dividen y distribuyen la señal de internet para lograr velocidades simétricas sin pérdida de calidad.',
+      date: 'May 01, 2026',
+      datetime: '2026-05-01',
+      category: { title: 'Telecomunicaciones', href: '#' },
+      author: {
+        name: 'Daniel Alejandro Lazo',
+        role: 'Especialista en Automatización',
+        imageUrl: 'https://avatars.githubusercontent.com/u/136534872?v=4',
+      },
+      conceptosClave: ['FTTH', 'Redes PON', 'Velocidad Simétrica', 'Arquitectura de Red'],
+    },
   
   // Puedes agregar más objetos de post aquí en el futuro
   
