@@ -1,40 +1,62 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from 'next/navigation';
 import { API_URL } from "../lib/config";
 
-// --- SEO TÉCNICO: METADATA DINÁMICA ---
-export async function generateMetadata(): Promise<Metadata> {
-  const data = await getEmpresaData();
-  if (!data) return { title: 'Sobre Nosotros | Control Modular MX' };
+export const metadata: Metadata = {
+  title: "Nosotros | Control Modular MX",
+  description: "Conoce al equipo de ingenieros detrás de Control Modular MX.",
+};
 
-  return {
-    title: data.meta_titulo || "Nosotros | Control Modular MX",
-    description: data.meta_descripcion || "Conoce al equipo de ingenieros detrás de Control Modular MX.",
-  };
-}
-
-// --- CONSUMO DE API REAL (DJANGO) ---
-async function getEmpresaData() {
+async function getNosotros() {
   try {
-    const res = await fetch(`${API_URL}/empresa/info/`, {
-      next: { revalidate: 3600 } // Cache por 1 hora
+    const res = await fetch(`${API_URL}/api/nosotros/`, {
+      next: { revalidate: 3600 },
     });
     if (!res.ok) return null;
     return res.json();
   } catch (error) {
-    console.error("Error fetching empresa data:", error);
+    console.error("Error fetching nosotros data:", error);
     return null;
   }
 }
 
-export default async function NosotrosPage() {
-  const data = await getEmpresaData();
+async function getEquipo() {
+  try {
+    const res = await fetch(`${API_URL}/api/nosotros/equipo/`, {
+      next: { revalidate: 3600 },
+    });
+    if (!res.ok) return [];
+    return res.json();
+  } catch (error) {
+    console.error("Error fetching equipo:", error);
+    return [];
+  }
+}
 
-  if (!data) {
+async function getValores() {
+  try {
+    const res = await fetch(`${API_URL}/api/nosotros/valores/`, {
+      next: { revalidate: 3600 },
+    });
+    if (!res.ok) return [];
+    return res.json();
+  } catch (error) {
+    console.error("Error fetching valores:", error);
+    return [];
+  }
+}
+
+export default async function NosotrosPage() {
+  const [nosotros, equipo, valores] = await Promise.all([
+    getNosotros(),
+    getEquipo(),
+    getValores(),
+  ]);
+
+  if (!nosotros) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white">
-        <p className="text-gray-400 animate-pulse font-mono">Iniciando sistema de identidad...</p>
+        <p className="text-gray-400 animate-pulse font-mono">Cargando información...</p>
       </div>
     );
   }
@@ -42,29 +64,28 @@ export default async function NosotrosPage() {
   return (
     <main className="bg-white">
       
-      {/* 1. HEADER / HERO SECTION DINÁMICO */}
+      {/* 1. HERO */}
       <div className="relative px-6 lg:px-8 bg-slate-900 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center mix-blend-overlay"></div>
         <div className="mx-auto max-w-4xl py-24 sm:py-32 lg:py-40 relative z-10 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-6xl text-white">
-            {data.hero_titulo}
+            {nosotros.hero_titulo}
           </h1>
           <p className="mt-6 text-xl leading-8 text-slate-300 max-w-2xl mx-auto">
-            {data.hero_descripcion}
+            {nosotros.hero_descripcion}
           </p>
         </div>
       </div>
 
-      {/* 2. NUESTRA HISTORIA Y ESTADÍSTICAS */}
+      {/* 2. HISTORIA */}
       <div className="relative bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-2 lg:items-start lg:gap-24 lg:px-8 px-6">
           
-          {/* Imagen Lateral (Podrías hacerla dinámica también en el futuro) */}
           <div className="relative sm:py-16 lg:py-0">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl h-[400px] lg:h-[600px] bg-slate-100">
               <img
                 className="absolute inset-0 h-full w-full object-cover"
-                src={data.historia_imagen || "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=1440&q=80"}
+                src={nosotros.historia_imagen || "https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=1440&q=80"}
                 alt="Nuestra historia en Control Modular MX"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 opacity-80" />
@@ -76,34 +97,36 @@ export default async function NosotrosPage() {
             </div>
           </div>
 
-          {/* Historia Dinámica */}
           <div className="relative mx-auto max-w-md sm:max-w-3xl lg:max-w-none py-12 lg:py-20">
             <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              {data.historia_titulo}
+              {nosotros.historia_titulo}
             </h2>
             <div className="mt-6 space-y-6 text-slate-600 text-lg leading-relaxed whitespace-pre-line">
-              {data.historia_cuerpo}
+              {nosotros.historia_cuerpo}
             </div>
 
-            {/* Stats Dinámicos */}
-            {data.stats?.length > 0 && (
-              <div className="mt-10">
-                <dl className="grid grid-cols-2 gap-x-8 gap-y-8 border-t border-slate-100 pt-10">
-                  {data.stats.map((stat: any) => (
-                    <div key={stat.id}>
-                      <dt className="text-base font-medium text-slate-500">{stat.etiqueta}</dt>
-                      <dd className="text-4xl font-extrabold tracking-tight text-indigo-600 mt-1">{stat.valor}</dd>
-                    </div>
-                  ))}
-                </dl>
+            {(nosotros.mision || nosotros.vision) && (
+              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 border-t border-slate-100 pt-10">
+                {nosotros.mision && (
+                  <div>
+                    <h3 className="font-bold text-slate-900 text-lg mb-2">Misión</h3>
+                    <p className="text-slate-600">{nosotros.mision}</p>
+                  </div>
+                )}
+                {nosotros.vision && (
+                  <div>
+                    <h3 className="font-bold text-slate-900 text-lg mb-2">Visión</h3>
+                    <p className="text-slate-600">{nosotros.vision}</p>
+                  </div>
+                )}
               </div>
             )}
           </div>
         </div>
       </div>
 
-      {/* 3. NUESTRO ADN / VALORES DINÁMICOS */}
-      {data.valores?.length > 0 && (
+      {/* 3. VALORES */}
+      {valores.length > 0 && (
         <div className="bg-slate-50 py-16 sm:py-24 border-y border-slate-200">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="max-w-2xl text-center sm:text-left">
@@ -113,8 +136,9 @@ export default async function NosotrosPage() {
               </p>
             </div>
             <dl className="mt-16 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-              {data.valores.map((value: any) => (
+              {valores.map((value: any) => (
                 <div key={value.id} className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                  {value.icono && <div className="text-3xl mb-3">{value.icono}</div>}
                   <dt className="font-bold text-gray-900 text-lg">{value.titulo}</dt>
                   <dd className="mt-4 text-base text-slate-600">{value.descripcion}</dd>
                 </div>
@@ -124,8 +148,8 @@ export default async function NosotrosPage() {
         </div>
       )}
 
-      {/* 4. EQUIPO DE TRABAJO DINÁMICO */}
-      {data.equipo?.length > 0 && (
+      {/* 4. EQUIPO */}
+      {equipo.length > 0 && (
         <div className="bg-white py-16 sm:py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="max-w-2xl mb-16">
@@ -135,12 +159,12 @@ export default async function NosotrosPage() {
               </p>
             </div>
             <ul role="list" className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-              {data.equipo.map((person: any) => (
+              {equipo.map((person: any) => (
                 <li key={person.id} className="group">
                   <div className="relative overflow-hidden rounded-xl h-80 w-full mb-6 bg-slate-100">
                     <img 
                       className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                      src={person.foto || 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800'} 
+                      src={person.foto_url || 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800'} 
                       alt={person.nombre} 
                     />
                   </div>
@@ -154,7 +178,7 @@ export default async function NosotrosPage() {
         </div>
       )}
 
-      {/* 5. CALL TO ACTION FINAL */}
+      {/* 5. CTA */}
       <div className="bg-slate-900">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:flex lg:items-center lg:justify-between lg:px-8">
           <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
