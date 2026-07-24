@@ -2,33 +2,33 @@ import Link from 'next/link';
 
 const projects = [
   {
-    title: 'Tarjeta Bizerba: Retrofitting para Rebanadoras',
-    category: { name: 'Hardware PCB', color: 'text-indigo-600 bg-indigo-50' },
+    title: 'Instalación Eléctrica Domiciliaria Completa',
+    category: { name: 'Electricidad', color: 'text-amber-600 bg-amber-50' },
     description:
-      'Diseño y fabricación de la Tarjeta Bizerba a la medida para maquinaria alemana. Nuestra tarjeta rebanadora Bizerba elimina la dependencia de refacciones electrónicas de importación lentas y costosas, permitiendo un servicio ágil a grandes cadenas industriales y centros de distribución.',
-    impact: 'Cero tiempos de espera en importación.',
+      'Instalación eléctrica completa para una casa nueva en Ejidos de Tequisistlán. Cableado de alta calidad, tablero con protecciones, tomas de corriente en todas las habitaciones y sistema de iluminación LED eficiente.',
+    impact: 'Casa lista para habitar en 3 días.',
     imageUrl:
-      'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80', // Placa electrónica / tecnología
+      'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80',
     href: '#',
   },
   {
-    title: 'Automatización de Bitácoras y Cotizaciones',
-    category: { name: 'Software Industrial', color: 'text-cyan-600 bg-cyan-50' },
+    title: 'Red de Internet Fibra Óptica Fibraya',
+    category: { name: 'Internet Fibra Óptica', color: 'text-blue-600 bg-blue-50' },
     description:
-      'Desarrollo de plataforma estructurada por jerarquías para la gestión de tareas. Digitalizamos la creación de reportes de servicio técnico y cotizaciones. Un proceso administrativo manual que antes tomaba 2 horas, ahora se genera en solo 5 minutos con presionar un botón. Menos papel, cero errores humanos.',
-    impact: 'Reducción del 95% en tiempos administrativos.',
+      'Instalación de fibra óptica real con Fibraya en la zona de Ejidos de Tequisistlán. Plan Hogar de 329/mes para familia de 4 personas con Netflix, YouTube y videollamadas. Conexión estable y rápida sin contrato.',
+    impact: 'Velocidad simétrica garantizada.',
     imageUrl:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80', // Pantalla con gráficas/dashboard
+      'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80',
     href: '#',
   },
   {
-    title: 'Control de Accesos e Instalaciones Inteligentes',
-    category: { name: 'Domótica / IoT', color: 'text-emerald-600 bg-emerald-50' },
+    title: 'Sistema de Cámaras de Seguridad',
+    category: { name: 'Seguridad / CCTV', color: 'text-emerald-600 bg-emerald-50' },
     description:
-      'Implementación de sistemas de automatización integral para la gestión de infraestructura. Centralizamos el control inteligente de luces, monitoreo de cámaras de seguridad, portones y puertas de acceso. Todo operado desde una interfaz unificada para maximizar la seguridad y la eficiencia energética.',
-    impact: 'Monitoreo total en tiempo real.',
+      'Instalación de sistema de videovigilancia con 8 cámaras HD para un negocio en Atenco. Cobertura completa del local, acceso remoto desde celular y grabación continua con almacenamiento en la nube.',
+    impact: 'Monitoreo 24/7 desde tu celular.',
     imageUrl:
-      'https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80', // Automatización / Domótica
+      'https://images.unsplash.com/photo-1557597774-9d273605dfa9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80',
     href: '#',
   },
 ];
@@ -42,9 +42,9 @@ export default function UseWorks() {
       
       <div className="relative mx-auto lg:mx-12 max-w-full">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Casos de Éxito en Ingeniería</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Casos de Éxito</h2>
           <p className="mt-4 text-xl text-gray-500">
-            Desde el diseño de tarjetas electrónicas hasta la automatización de procesos gerenciales. Así resolvemos problemas reales en la industria.
+            Instalaciones eléctricas, internet fibra óptica y sistemas de seguridad para hogares y negocios. Así resolvemos problemas reales.
           </p>
         </div>
         

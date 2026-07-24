@@ -3,61 +3,97 @@ import Link from "next/link";
 
 // 1. Manejo nativo de SEO en Next.js (Sustituye a react-helmet)
 export const metadata: Metadata = {
-  title: "Servicios y Soluciones | Control Modular MX",
-  description: "Desarrollo de tarjetas electrónicas PCB, automatización de software industrial, diseño 3D y domótica en Atenco y el Estado de México.",
+  title: "Servicios | Electricidad, Internet, Cámaras y Soluciones Industriales | Control Modular MX",
+  description: "Instalaciones eléctricas domiciliarias, reparaciones eléctricas, internet fibra óptica Fibraya, cámaras de seguridad, extensores AP, pantallas y tarjetas PCB Bizerba en Atenco y Estado de México.",
 };
 
-// 2. Nuestra base de datos de servicios (Sustituye a tus arrays viejos)
-const hardwareServices = [
+// 2. Nuestra base de datos de servicios
+const electricidadServices = [
   {
-    title: 'Tarjetas PCB a la Medida',
-    description: 'Diseño, ruteo y fabricación de circuitos impresos (PCB) industriales. No dependas de proveedores extranjeros.',
+    title: 'Instalaciones Eléctricas Domiciliarias',
+    description: 'Instalación completa de cableado eléctrico, tableros, tomas de corriente, interruptores y sistemas de iluminación para casas y departamentos nuevos o en remodelación.',
     icon: '⚡',
   },
   {
-    title: 'Retrofitting de Maquinaria',
-    description: 'Actualización de electrónica en maquinaria obsoleta o extranjera (ej. Bizerba) para devolverles la vida útil cumpliendo normativas.',
+    title: 'Reparaciones Eléctricas',
+    description: 'Diagnóstico y reparación de cortocircuitos, fallas en tableros, cableado dañado, apagones intermitentes y problemas eléctricos en general.',
+    icon: '🔧',
+  },
+  {
+    title: 'Tableros y Cableado',
+    description: 'Instalación y actualización de tableros eléctricos con protecciones termomagnéticas, GFCI y cableado de alta calidad certificado.',
+    icon: '🔌',
+  },
+];
+
+const internetServices = [
+  {
+    title: 'Internet Fibra Óptica Fibraya',
+    description: 'Instalación de internet de alta velocidad con fibra óptica real a través de Fibraya. Planes desde $249/mes sin contrato. Cobertura en Ejidos de Tequisistlán y zonas aledañas.',
+    icon: '🌐',
+  },
+  {
+    title: 'Extensores de Señal AP',
+    description: 'Ampliamos la cobertura de tu red WiFi con extensores de acceso para eliminar zonas muertas en tu hogar o negocio.',
+    icon: '📡',
+  },
+  {
+    title: 'Configuración de Red',
+    description: 'Configuración de routers, redes mesh, segregación de redes WiFi y optimización de velocidad para dispositivos múltiples.',
+    icon: '🔗',
+  },
+];
+
+const seguridadServices = [
+  {
+    title: 'Cámaras de Seguridad CCTV',
+    description: 'Instalación de sistemas de videovigilancia para hogares y negocios con cámaras HD, IP y analógicas. Monitoreo remoto desde tu celular.',
+    icon: '📹',
+  },
+  {
+    title: 'Sistemas de Monitoreo',
+    description: 'Configuración de sistemas de grabación DVR/NVR, almacenamiento en la nube y acceso remoto para vigilancia 24/7.',
+    icon: '🖥️',
+  },
+  {
+    title: 'Alarmas y Sensores',
+    description: 'Instalación de alarmas inalámbricas, sensores de movimiento, apertura de puertas y alertas automáticas por WhatsApp.',
+    icon: '🚨',
+  },
+];
+
+const pantallasServices = [
+  {
+    title: 'Instalación de Pantallas',
+    description: 'Montaje profesional de pantallas, televisores, displays industriales y equipamiento audiovisual en paredes, soportes y estructuras.',
+    icon: '📺',
+  },
+  {
+    title: 'Pantallas Industriales',
+    description: 'Instalación de displays para punto de venta, señalización digital, menús electrónicos y pantallas interactivas para negocios.',
+    icon: '🖥️',
+  },
+  {
+    title: 'Equipamiento Audiovisual',
+    description: 'Instalación de proyectores, sistemas de sonido, barras de sonido y configuración de entretenimiento en hogares y salas de juntas.',
+    icon: '🔊',
+  },
+];
+
+const ingenieriaServices = [
+  {
+    title: 'Tarjetas PCB Bizerba',
+    description: 'Diseño, ruteo y fabricación de tarjetas de control a la medida para maquinaria industrial Bizerba y otros equipos especializados.',
+    icon: '🔧',
+  },
+  {
+    title: 'Automatización Industrial',
+    description: 'Desarrollo de soluciones de automatización para procesos industriales, control de maquinaria y sistemas de monitoreo.',
     icon: '⚙️',
   },
   {
-    title: 'Interfaces HMI / Pantallas',
-    description: 'Implementación de pantallas táctiles robustas para que los operadores controlen la maquinaria de forma intuitiva.',
-    icon: '🖥️',
-  },
-];
-
-const softwareServices = [
-  {
-    title: 'Automatización de Bitácoras',
-    description: 'Sistemas que reducen el trabajo administrativo de 2 horas a 5 minutos. Creación de reportes y cotizaciones con un clic.',
-    icon: '📊',
-  },
-  {
-    title: 'Nube Industrial Privada',
-    description: 'Tus datos operativos, inventarios y reportes almacenados de forma segura bajo tus propias reglas y servidores.',
-    icon: '☁️',
-  },
-  {
-    title: 'Software de Jerarquías',
-    description: 'Plataformas de gestión donde cada usuario (operador, gerente, director) tiene accesos y paneles de control específicos.',
-    icon: '🔐',
-  },
-];
-
-const integralServices = [
-  {
-    title: 'Control de Accesos y Domótica',
-    description: 'Automatización de luces inteligentes, cámaras de seguridad y portones manejados desde una aplicación central.',
-    icon: '🏢',
-  },
-  {
-    title: 'Diseño e Impresión 3D',
-    description: 'Modelado CAD e impresión en materiales de alta resistencia mecánica para carcasas de circuitos o refacciones plásticas.',
-    icon: '🖨️',
-  },
-  {
-    title: 'Mantenimiento y Soporte en Sitio',
-    description: 'Pólizas de soporte técnico directo en planta para garantizar que tu hardware y software nunca se detengan.',
+    title: 'Soporte Técnico en Sitio',
+    description: 'Ubicados en Atenco, Estado de México, ofrecemos soporte técnico directo en tus instalaciones para resolver cualquier problema.',
     icon: '🛠️',
   },
 ];
@@ -88,70 +124,100 @@ export default function ServiciosPage() {
   return (
     <main className="bg-white min-h-screen">
       
-      {/* HEADER DE SERVICIOS (Sustituye a tu Header.js) */}
+      {/* HEADER DE SERVICIOS */}
       <div className="bg-slate-900 text-white py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl">
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-white">
-              Ingeniería a la Medida
+              Soluciones para tu Hogar y Negocio
             </h1>
             <p className="mt-6 text-xl leading-8 text-slate-300">
-              Desde el circuito impreso hasta la nube. Desarrollamos la infraestructura física y digital que tu industria necesita para operar sin interrupciones ni dependencias externas.
+              Instalaciones eléctricas, internet fibra óptica, cámaras de seguridad, pantallas y soluciones industriales. Todo lo que necesitas en un solo lugar.
             </p>
           </div>
         </div>
       </div>
 
-      {/* SECCIÓN 1: Hardware y PCB */}
+      {/* SECCIÓN 1: Electricidad */}
       <div className="py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-12 max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Hardware y Electrónica</h2>
-            <p className="mt-4 text-lg text-gray-600">Fabricación y retrofitting de tarjetas de control industrial.</p>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Electricidad</h2>
+            <p className="mt-4 text-lg text-gray-600">Instalaciones eléctricas domiciliarias, reparaciones y tableros de alta calidad.</p>
           </div>
           <div className="grid gap-8 lg:grid-cols-3 sm:grid-cols-2">
-            {hardwareServices.map((service, index) => (
+            {electricidadServices.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}
           </div>
         </div>
       </div>
 
-      {/* SECCIÓN 2: Software Industrial */}
+      {/* SECCIÓN 2: Internet */}
       <div className="py-20 sm:py-24 bg-gray-50 border-y border-gray-200">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-12 max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Software y Nube</h2>
-            <p className="mt-4 text-lg text-gray-600">Sistemas que automatizan horas de trabajo administrativo en segundos.</p>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Internet Fibra Óptica (Fibraya)</h2>
+            <p className="mt-4 text-lg text-gray-600">Conexión de alta velocidad sin contrato con Fibraya. Planes desde $249/mes.</p>
           </div>
           <div className="grid gap-8 lg:grid-cols-3 sm:grid-cols-2">
-            {softwareServices.map((service, index) => (
+            {internetServices.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}
           </div>
         </div>
       </div>
 
-      {/* SECCIÓN 3: Domótica y 3D */}
+      {/* SECCIÓN 3: Seguridad */}
       <div className="py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-12 max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Sistemas Integrales</h2>
-            <p className="mt-4 text-lg text-gray-600">Modelado, impresión 3D y control de edificios inteligentes.</p>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Seguridad y Videovigilancia</h2>
+            <p className="mt-4 text-gray-600">Cámaras CCTV, sistemas de monitoreo y alarmas para proteger tu hogar o negocio.</p>
           </div>
           <div className="grid gap-8 lg:grid-cols-3 sm:grid-cols-2">
-            {integralServices.map((service, index) => (
+            {seguridadServices.map((service, index) => (
               <ServiceCard key={index} {...service} />
             ))}
           </div>
         </div>
       </div>
 
-      {/* CALL TO ACTION PEQUEÑO */}
+      {/* SECCIÓN 4: Pantallas */}
+      <div className="py-20 sm:py-24 bg-gray-50 border-y border-gray-200">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mb-12 max-w-2xl">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Pantallas y Audiovisual</h2>
+            <p className="mt-4 text-lg text-gray-600">Instalación de pantallas, displays industriales y equipamiento audiovisual.</p>
+          </div>
+          <div className="grid gap-8 lg:grid-cols-3 sm:grid-cols-2">
+            {pantallasServices.map((service, index) => (
+              <ServiceCard key={index} {...service} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* SECCIÓN 5: Ingeniería (Herencia) */}
+      <div className="py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mb-12 max-w-2xl">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Ingeniería Industrial</h2>
+            <p className="mt-4 text-lg text-gray-600">Tarjetas PCB Bizerba, automatización industrial y soporte técnico especializado.</p>
+          </div>
+          <div className="grid gap-8 lg:grid-cols-3 sm:grid-cols-2">
+            {ingenieriaServices.map((service, index) => (
+              <ServiceCard key={index} {...service} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* CALL TO ACTION */}
       <div className="bg-gray-50">
         <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            <span className="block">¿Necesitas una solución específica?</span>
+            <span className="block">¿Necesitas una instalación o servicio?</span>
             <span className="block text-indigo-600">Hablemos de tu proyecto hoy mismo.</span>
           </h2>
           <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">

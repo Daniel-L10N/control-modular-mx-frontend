@@ -2,11 +2,11 @@ import Link from 'next/link';
 
 const navigation = {
   solutions: [
-    { name: 'Productos', href: '/productos' },
     { name: 'Servicios', href: '/servicios' },
+    { name: 'Fibraya (Internet)', href: '/servicios' },
+    { name: 'Productos', href: '/productos' },
     { name: 'Nosotros', href: '/nosotros' },
     { name: 'Trabajos', href: '/trabajos' },
-    { name: 'Blog', href: '/blog' },
   ],
   support: [
     { name: 'Contacto', href: '/contacto' },
@@ -71,7 +71,7 @@ export default function Footer() {
               CONTROL<span className="text-indigo-600 font-black">MODULAR</span>
             </span>
             <p className="text-base text-gray-500">
-              Desarrollamos soluciones de hardware, software y domótica para la industria mexicana.
+              Instalaciones eléctricas, internet fibra óptica Fibraya, cámaras de seguridad y soluciones industriales en Atenco y Estado de México.
             </p>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (

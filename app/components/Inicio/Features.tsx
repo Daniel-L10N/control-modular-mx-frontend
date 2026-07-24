@@ -2,36 +2,36 @@ import { CheckIcon } from '@heroicons/react/24/outline'
 
 const features = [
   {
-    name: 'Ingeniería Electrónica (PCB)',
-    description: 'Diseño y fabricación de tarjetas de control a la medida para maquinaria industrial y domótica.',
-  },
-  { 
-    name: 'Diseño e Impresión 3D', 
-    description: 'Modelado CAD e impresión 3D en materiales de alta resistencia para piezas mecánicas, carcasas y prototipos funcionales.' 
+    name: 'Instalaciones Eléctricas Domiciliarias',
+    description: 'Instalación completa de cableado eléctrico, tableros, tomas de corriente y sistemas de iluminación para tu hogar o negocio.',
   },
   {
-    name: 'Desarrollo de Apps a la Medida',
-    description: 'Aplicaciones móviles y web enfocadas en automatizar la gestión y optimizar el flujo técnico de tu planta.',
+    name: 'Reparaciones Eléctricas',
+    description: 'Diagnóstico y reparación de cortocircuitos, fallas en tableros, cableado dañado y problemas eléctricos en general.',
   },
-  { 
-    name: 'Interfaces HMI Inteligentes', 
-    description: 'Implementación de pantallas táctiles personalizadas para el monitoreo y control de procesos en tiempo real.' 
+  {
+    name: 'Internet Fibra Óptica (Fibraya)',
+    description: 'Instalación de internet de alta velocidad con fibra óptica real a través de Fibraya. Planes desde $249/mes sin contrato.',
   },
-  { 
-    name: 'Mantenimiento Predictivo IoT', 
-    description: 'Sistemas de sensores inteligentes que previenen fallas y evitan costosos paros de línea en tu maquinaria.' 
+  {
+    name: 'Extensadores de Señal AP',
+    description: 'Ampliamos la cobertura de tu red WiFi con extensores de acceso para eliminar zonas muertas en tu propiedad.',
   },
-  { 
-    name: 'Soberanía de Datos en Nube', 
-    description: 'Almacenamiento y bases de datos en servidores seguros para que tu información industrial nunca salga de tu control.' 
+  {
+    name: 'Instalación de Cámaras de Seguridad',
+    description: 'Instalación de sistemas de videovigilancia CCTV para hogares y negocios con monitoreo remoto.',
   },
-  { 
-    name: 'Seguridad Industrial Digital', 
-    description: 'Cifrado de grado empresarial para proteger la propiedad intelectual, métricas y datos operativos de tu negocio.' 
+  {
+    name: 'Instalación de Pantallas/Displays',
+    description: 'Montaje e instalación de pantallas, televisores, displays industriales y equipamiento audiovisual.',
   },
-  { 
-    name: 'Soporte Técnico en Sitio', 
-    description: 'Ubicados en Atenco, Estado de México, garantizamos un tiempo de respuesta rápido y presencia física en tus instalaciones.' 
+  {
+    name: 'Tarjetas PCB Bizerba (Herencia)',
+    description: 'Diseño y fabricación de tarjetas de control a la medida para maquinaria industrial Bizerba. Nuestro legado de ingeniería electrónica.',
+  },
+  {
+    name: 'Soporte Técnico en Sitio',
+    description: 'Ubicados en Atenco, Estado de México, garantizamos un tiempo de respuesta rápido y presencia física en tus instalaciones.',
   },
 ]
 
@@ -43,7 +43,7 @@ export default function Features() {
           <h2 className="text-lg font-semibold text-indigo-600">Soluciones</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900">Ingeniería Integral</p>
           <p className="mt-4 text-lg text-gray-500">
-            Fusionamos el desarrollo de software avanzado, la ingeniería electrónica y la fabricación 3D para digitalizar y automatizar tu industria de punta a punta.
+            Instalaciones eléctricas, internet fibra óptica, cámaras de seguridad y soluciones industriales. Todo lo que tu hogar o negocio necesita en un solo lugar.
           </p>
           <div className="mt-8">
             <div className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">

@@ -7,7 +7,7 @@ export default function TrabajosPage() {
             Trabajos Realizados
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Casos de éxito en automatización industrial y desarrollo de hardware a medida.
+            Instalaciones eléctricas, internet fibra óptica y sistemas de seguridad para hogares y negocios.
           </p>
         </div>
       </div>

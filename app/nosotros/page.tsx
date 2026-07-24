@@ -158,12 +158,12 @@ export default async function NosotrosPage() {
       <div className="bg-slate-900">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:flex lg:items-center lg:justify-between lg:px-8">
           <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-            <span className="block">¿Listo para modernizar tus equipos?</span>
-            <span className="block text-indigo-400 mt-2">Hablemos de tus necesidades técnicas.</span>
+            <span className="block">¿Necesitas electricidad, internet o cámaras?</span>
+            <span className="block text-indigo-400 mt-2">Hablemos de tu proyecto hoy.</span>
           </h2>
           <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0 gap-4">
             <Link href="/contacto" className="inline-flex items-center justify-center rounded-md bg-indigo-500 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-600 transition-colors font-bold">
-              Cotizar Proyecto
+              Contactar
             </Link>
           </div>
         </div>

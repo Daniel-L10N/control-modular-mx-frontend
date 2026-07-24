@@ -9,23 +9,23 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://controlmodularmx.com',
   },
-  title: "Control Modular MX | Tarjeta Rebanadora Bizerba e Ingeniería Industrial",
-  description: "Especialistas en Tarjeta Bizerba y refacciones electrónicas. Diseño de tarjetas PCB, automatización de procesos y software industrial en México.",
-  keywords: ["Tarjeta Bizerba", "Tarjeta Rebanadora Bizerba", "Bizerba México", "Refacciones Bizerba", "Control Modular MX", "Diseño PCB", "Automatización Industrial"],
+  title: "Control Modular MX | Ingeniería Eléctrica, Internet y Soluciones Industriales",
+  description: "Instalaciones eléctricas domiciliarias, reparaciones eléctricas, internet fibra óptica Fibraya, cámaras de seguridad, extensores AP y soluciones industriales en Atenco y Estado de México.",
+  keywords: ["instalaciones eléctricas", "reparaciones eléctricas", "fibra óptica", "internet Fibraya", "cámaras de seguridad", "extensores AP", "instalación de pantallas", "ingeniería eléctrica", "Control Modular MX", "Tarjeta Bizerba", "Diseño PCB", "Atenco Estado de México"],
   verification: {
     google: "Unsax41OkawvIslWNHGKUNDEXo4iQH6VQE8Yzeo5yi4",
   },
   openGraph: {
-    title: 'Control Modular MX | Tarjeta Rebanadora Bizerba',
-    description: 'Especialistas en Tarjeta Bizerba y refacciones electrónicas industriales.',
+    title: 'Control Modular MX | Ingeniería Eléctrica, Internet y Soluciones Industriales',
+    description: 'Instalaciones eléctricas, internet fibra óptica Fibraya, cámaras de seguridad y soluciones industriales en México.',
     url: 'https://controlmodularmx.com',
     siteName: 'Control Modular MX',
-      images: [
+    images: [
       {
         url: '/bizerba.png',
         width: 1200,
         height: 630,
-        alt: 'Tarjeta Rebanadora Bizerba - Control Modular MX',
+        alt: 'Control Modular MX - Ingeniería Eléctrica y Soluciones Industriales',
       },
     ],
     locale: 'es_MX',
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Control Modular MX | Tarjeta Rebanadora Bizerba',
-    description: 'Especialistas en Tarjeta Bizerba y refacciones electrónicas industriales.',
+    title: 'Control Modular MX | Ingeniería Eléctrica, Internet y Soluciones Industriales',
+    description: 'Instalaciones eléctricas, internet fibra óptica, cámaras de seguridad y soluciones industriales en México.',
     images: ['/bizerba.png'],
   },
 };

@@ -2,19 +2,19 @@
 
 const incentives = [
   {
-    title: 'Prototipado Electrónico Ágil',
+    title: 'Instalación Rápida (24-48 hrs)',
     imageSrc: '/icons/icon-shipping-simple.svg',
-    description: "No dependas de refacciones genéricas. Diseñamos y fabricamos tarjetas PCB a la medida exacta de tu maquinaria, listas para pruebas funcionales en tiempo récord.",
+    description: "Conectamos tu hogar o negocio en 24-48 horas. Internet fibra óptica Fibraya, instalaciones eléctricas y sistemas de cámaras listos en tiempo récord.",
   },
   {
-    title: 'Automatización a Medida',
+    title: 'Soporte Directo por WhatsApp',
     imageSrc: '/icons/icon-warranty-simple.svg',
-    description: "Eliminamos las libretas y los procesos manuales. Desarrollamos software que se comunica directamente con tu hardware para automatizar tareas repetitivas y generar reportes precisos.",
+    description: "Sin intermediarios. Habla directamente con un ingeniero por WhatsApp para resolver cualquier duda, cotización o problema técnico de forma inmediata.",
   },
   {
-    title: 'Soporte Técnico en Planta',
+    title: 'Soluciones Integrales',
     imageSrc: '/icons/icon-exchange-simple.svg',
-    description: "Al estar ubicados estratégicamente en Atenco, ofrecemos tiempos de respuesta inmediatos para mantenimiento predictivo y soporte directo en tus instalaciones.",
+    description: "Electricidad + internet + seguridad + pantallas. Un solo proveedor para todas las necesidades técnicas de tu hogar o negocio. Sin complicaciones.",
   },
 ]
 
@@ -25,10 +25,10 @@ export default function Incentives() {
         <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
           <div className="max-w-3xl">
             <h2 className="text-4xl font-bold tracking-tight text-gray-900">
-              ¿Por qué digitalizar tu industria con nosotros?
+              ¿Por qué elegir Control Modular MX?
             </h2>
             <p className="mt-4 text-gray-500 leading-relaxed">
-              Vamos más allá de la simple instalación. Analizamos tu proceso operativo para detectar cuellos de botella y creamos el hardware y software necesario para que tu personal se enfoque en lo técnico, no en lo administrativo.
+              No somos solo vendedores, somos ingenieros que instalan, reparan y dan soporte directo. Desde instalaciones eléctricas hasta internet fibra óptica, tu proyecto está en buenas manos.
             </p>
           </div>
           <div className="mt-16 grid grid-cols-1 gap-y-10 gap-x-8 lg:grid-cols-3">

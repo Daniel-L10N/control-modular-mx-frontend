@@ -25,7 +25,7 @@ export default async function ProductosPage() {
           Nuestros <span className="text-indigo-600">Productos</span>
         </h1>
         <p className="mt-4 text-xl text-gray-500">
-          Refacciones electrónicas de alta precisión y tarjetas de control para la industria.
+          Tarjetas de control Bizerba y refacciones electrónicas de alta precisión para la industria.
         </p>
 
         {products.length === 0 ? (
@@ -76,9 +76,9 @@ export default async function ProductosPage() {
         {/* SEO Text Section */}
         <div className="mt-32 border-t border-gray-200 pt-16">
           <div className="max-w-3xl">
-            <h2 className="text-2xl font-bold text-slate-900">Ingeniería Mexicana de Clase Mundial</h2>
+            <h2 className="text-2xl font-bold text-slate-900">Ingeniería de Clase Mundial</h2>
             <p className="mt-4 text-gray-600 leading-7">
-              En Control Modular MX nos especializamos en el desarrollo de refacciones electrónicas de alto rendimiento. Nuestra misión es reducir los tiempos de inactividad de tu planta mediante soluciones que superan los estándares de fábrica.
+              En Control Modular MX nos especializamos en el desarrollo de refacciones electrónicas de alto rendimiento y tarjetas PCB Bizerba. Nuestra misión es reducir los tiempos de inactividad de tu planta mediante soluciones que superan los estándares de fábrica.
             </p>
           </div>
         </div>

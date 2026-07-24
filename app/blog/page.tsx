@@ -7,7 +7,7 @@ export default function BlogPage() {
             Blog
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Artículos sobre automatización industrial, electrónica y tecnología.
+            Artículos sobre instalaciones eléctricas, internet fibra óptica, seguridad y tecnología.
           </p>
         </div>
       </div>

@@ -5,11 +5,13 @@ import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline
 import { API_URL } from "../lib/config";
 
 const SERVICIOS = [
-  { value: 'hardware', label: 'Desarrollo de Hardware (PCB)' },
-  { value: 'software', label: 'Software Industrial / Nube' },
-  { value: 'domotica', label: 'Domótica y Control de Accesos' },
-  { value: '3d', label: 'Diseño e Impresión 3D' },
-  { value: 'soporte', label: 'Mantenimiento o Soporte' },
+  { value: 'electricidad', label: 'Instalación Eléctrica Domiciliaria' },
+  { value: 'reparacion-electrica', label: 'Reparación Eléctrica' },
+  { value: 'internet', label: 'Internet Fibra Óptica (Fibraya)' },
+  { value: 'camaras', label: 'Cámaras de Seguridad CCTV' },
+  { value: 'pantallas', label: 'Instalación de Pantallas/Displays' },
+  { value: 'extensores', label: 'Extensor de Señal AP / WiFi' },
+  { value: 'ingenieria', label: 'Ingeniería Industrial (PCB Bizerba)' },
   { value: 'otro', label: 'Otro' },
 ];
 
@@ -21,7 +23,7 @@ export default function ContactoPage() {
     empresa: '',
     email: '',
     telefono: '',
-    servicio: 'hardware',
+          servicio: 'electricidad',
     mensaje: '',
   });
 
@@ -48,7 +50,7 @@ export default function ContactoPage() {
           empresa: '',
           email: '',
           telefono: '',
-          servicio: 'hardware',
+    servicio: 'electricidad',
           mensaje: '',
         });
       } else {
@@ -68,10 +70,10 @@ export default function ContactoPage() {
       <div className="bg-gray-900 text-white py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-white">
-            Diseñemos el futuro de tu planta
+            Contáctanos
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-300 max-w-2xl mx-auto">
-            ¿Tienes un problema de automatización, requieres desarrollo de hardware a la medida o necesitas digitalizar tus procesos? Hablemos de ingeniería.
+            ¿Necesitas una instalación eléctrica, internet fibra óptica, cámaras de seguridad o una solución industrial? Hablemos de tu proyecto.
           </p>
         </div>
       </div>
@@ -86,7 +88,7 @@ export default function ContactoPage() {
               Información de Contacto
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Nuestro equipo de ingeniería binacional está listo para analizar tus requerimientos técnicos y ofrecerte una solución escalable.
+              Nuestro equipo de ingeniería está listo para atender tus necesidades de electricidad, internet, seguridad y más.
             </p>
 
             <dl className="mt-10 space-y-8">
@@ -101,14 +103,14 @@ export default function ContactoPage() {
                 <dd>
                   <p className="text-sm font-semibold text-gray-900">Soporte y Ventas Inmediatas</p>
                   <a 
-                    href="https://wa.me/525525686595?text=Hola%20ingenieros%20de%20Control%20Modular,%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto." 
+                    href="https://wa.me/525525686595?text=Hola%20Control%20Modular,%20me%20gustar%C3%ADa%20cotizar%20un%20servicio." 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-lg font-bold text-green-600 hover:text-green-500 mt-1 block"
                   >
                     +52 552 568 6595
                   </a>
-                  <p className="text-sm text-gray-500 mt-1">Lunes a Viernes de 9:00am a 6:00pm</p>
+                  <p className="text-sm text-gray-500 mt-1">Lunes a Viernes 9:00-20:00, Sábado 9:00-16:00</p>
                 </dd>
               </div>
 

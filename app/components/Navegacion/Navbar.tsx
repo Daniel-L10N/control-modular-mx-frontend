@@ -8,14 +8,19 @@ import DotLoader from 'react-spinners/DotLoader';
 
 const solutions = [
   {
-    name: 'Productos',
-    description: 'Conoce nuestros productos y refacciones',
-    href: 'https://bizerba-refacciones.vercel.app/',
+    name: 'Servicios',
+    description: 'Electricidad, internet, cámaras y más',
+    href: '/servicios',
   },
   {
-    name: 'Servicios',
-    description: 'Explora nuestros servicios de ingeniería',
+    name: 'Fibraya (Internet)',
+    description: 'Internet fibra óptica de alta velocidad',
     href: '/servicios',
+  },
+  {
+    name: 'Productos',
+    description: 'Tarjetas PCB Bizerba y refacciones',
+    href: 'https://bizerba-refacciones.vercel.app/',
   },
   {
     name: 'Nosotros',

@@ -10,22 +10,22 @@ import LogoCloud from "./components/Inicio/LogoCloud";
 export default function Home() {
   return (
     <main data-scroll-section>
-      {/* El "Hero" principal donde hablaremos de la dualidad México/Cuba */}
+      {/* Hero principal: Instalaciones eléctricas, internet fibra óptica y soluciones */}
       <Header />
       
-      {/* Por qué elegirnos: Soporte técnico robusto y equipo internacional */}
+      {/* Por qué elegirnos: Instalación rápida, soporte directo, soluciones integrales */}
       <Incentives />
       
-      {/* Nuestra metodología de trabajo */}
+      {/* Casos de éxito: Instalaciones eléctricas, Fibraya, cámaras */}
       <UseWorks />
       
-      {/* El núcleo: Tarjetas a la medida, Nube, Apps e Interfaces HMI */}
+      {/* Nuestros servicios: Electricidad, internet, cámaras, pantallas, ingeniería */}
       <Features />
       
-      {/* Llamado a la acción: "Solicita una auditoría para tu planta" */}
+      {/* Llamado a la acción */}
       <CTA />
       
-      {/* Clientes y aliados (Aquí podemos poner a nuestros socios estratégicos) */}
+      {/* Aliados y marcas: CMX, Bizerba, Fibraya */}
       <LogoCloud />
       
      

@@ -5,10 +5,10 @@ import Link from 'next/link';
 
 const navigation = {
   solutions: [
-    { name: 'Marketing ', href: '/servicios' },
-    { name: 'Analytics ', href: '/servicios' },
-    { name: 'Commerce ', href: '/servicios' },
-    { name: 'Insights', href: '/servicios' }
+    { name: 'Electricidad', href: '/servicios' },
+    { name: 'Internet (Fibraya)', href: '/servicios' },
+    { name: 'Cámaras', href: '/servicios' },
+    { name: 'Domótica', href: '/servicios' }
   ],
   social: [
     {
@@ -68,7 +68,7 @@ export default function Header() {
               Control Modular MX <br />
               <span className='text-white'>
                 <Typewriter
-                  words={['Transforma ideas en productos digitales.', 'Al servicio de usted y de su empresa.', 'Soluciones que tu industria necesita.']}
+                  words={['Instalaciones eléctricas y reparaciones.', 'Internet fibra óptica de alta velocidad.', 'Cámaras, pantallas y soluciones industriales.']}
                   loop={0}
                   cursor
                   cursorStyle='_'
@@ -81,7 +81,7 @@ export default function Header() {
             
             {/* Replaced <p> with <div> to fix hydration error (no <div> inside <p>) */}
             <div className="mt-8 text-white text-xl md:text-2xl max-w-2xl leading-relaxed">
-              <p>Para empezar hoy nuestros servicios varían entre:</p>
+              <p>Para empezar hoy nuestros servicios incluyen:</p>
               <div className="mt-4 flex flex-wrap gap-x-4">
                 {navigation.solutions.map((service) => (
                   <span key={service.name} className='lg:text-xl text-md font-medium text-gray-400 hover:text-indigo-400 transition duration-300 border-b-2 border-transparent hover:border-indigo-400'>
