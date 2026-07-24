@@ -3,29 +3,11 @@ import Link from "next/link";
 
 // 1. Manejo nativo de SEO en Next.js (Sustituye a react-helmet)
 export const metadata: Metadata = {
-  title: "Servicios | Electricidad, Internet, Cámaras y Soluciones Industriales | Control Modular MX",
-  description: "Instalaciones eléctricas domiciliarias, reparaciones eléctricas, internet fibra óptica Fibraya, cámaras de seguridad, extensores AP, pantallas y tarjetas PCB Bizerba en Atenco y Estado de México.",
+  title: "Servicios | Internet Fibra Óptica FibraYa, Electricidad, Cámaras | Control Modular MX",
+  description: "Internet de fibra óptica FibraYa, instalaciones eléctricas, cámaras de seguridad y cualquier chambita técnica en Atenco y Ejidos de Tequisistlán, Estado de México.",
 };
 
 // 2. Nuestra base de datos de servicios
-const electricidadServices = [
-  {
-    title: 'Instalaciones Eléctricas Domiciliarias',
-    description: 'Instalación completa de cableado eléctrico, tableros, tomas de corriente, interruptores y sistemas de iluminación para casas y departamentos nuevos o en remodelación.',
-    icon: '⚡',
-  },
-  {
-    title: 'Reparaciones Eléctricas',
-    description: 'Diagnóstico y reparación de cortocircuitos, fallas en tableros, cableado dañado, apagones intermitentes y problemas eléctricos en general.',
-    icon: '🔧',
-  },
-  {
-    title: 'Tableros y Cableado',
-    description: 'Instalación y actualización de tableros eléctricos con protecciones termomagnéticas, GFCI y cableado de alta calidad certificado.',
-    icon: '🔌',
-  },
-];
-
 const internetServices = [
   {
     title: 'Internet Fibra Óptica Fibraya',
@@ -41,6 +23,24 @@ const internetServices = [
     title: 'Configuración de Red',
     description: 'Configuración de routers, redes mesh, segregación de redes WiFi y optimización de velocidad para dispositivos múltiples.',
     icon: '🔗',
+  },
+];
+
+const electricidadServices = [
+  {
+    title: 'Instalaciones Eléctricas Domiciliarias',
+    description: 'Instalación completa de cableado eléctrico, tableros, tomas de corriente, interruptores y sistemas de iluminación para casas y departamentos nuevos o en remodelación.',
+    icon: '⚡',
+  },
+  {
+    title: 'Reparaciones Eléctricas',
+    description: 'Diagnóstico y reparación de cortocircuitos, fallas en tableros, cableado dañado, apagones intermitentes y problemas eléctricos en general.',
+    icon: '🔧',
+  },
+  {
+    title: 'Tableros y Cableado',
+    description: 'Instalación y actualización de tableros eléctricos con protecciones termomagnéticas, GFCI y cableado de alta calidad certificado.',
+    icon: '🔌',
   },
 ];
 
@@ -129,16 +129,41 @@ export default function ServiciosPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl">
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-white">
-              Soluciones para tu Hogar y Negocio
+              Conectando a las Familias de Nuestra Comunidad
             </h1>
             <p className="mt-6 text-xl leading-8 text-slate-300">
-              Instalaciones eléctricas, internet fibra óptica, cámaras de seguridad, pantallas y soluciones industriales. Todo lo que necesitas en un solo lugar.
+              Internet de fibra óptica FibraYa, instalaciones eléctricas, cámaras de seguridad y cualquier chambita técnica que se ofrezca. Vamos creciendo poco a poco, junto a ustedes.
             </p>
           </div>
         </div>
       </div>
 
-      {/* SECCIÓN 1: Electricidad */}
+      {/* SECCIÓN 1: Internet Fibra Óptica (Fibraya) */}
+      <div className="py-20 sm:py-24 bg-gray-50 border-y border-gray-200">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mb-12 max-w-2xl">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Internet Fibra Óptica (Fibraya)</h2>
+            <p className="mt-4 text-lg text-gray-600">Conexión de alta velocidad sin contrato con Fibraya. Planes desde $249/mes.</p>
+          </div>
+          <div className="grid gap-8 lg:grid-cols-3 sm:grid-cols-2">
+            {internetServices.map((service, index) => (
+              <ServiceCard key={index} {...service} />
+            ))}
+          </div>
+          <div className="mt-8">
+            <a
+              href="https://fibraya.mx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-500 transition-colors"
+            >
+              Ver planes completos y contratar →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* SECCIÓN 2: Electricidad */}
       <div className="py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-12 max-w-2xl">
@@ -153,23 +178,8 @@ export default function ServiciosPage() {
         </div>
       </div>
 
-      {/* SECCIÓN 2: Internet */}
-      <div className="py-20 sm:py-24 bg-gray-50 border-y border-gray-200">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mb-12 max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Internet Fibra Óptica (Fibraya)</h2>
-            <p className="mt-4 text-lg text-gray-600">Conexión de alta velocidad sin contrato con Fibraya. Planes desde $249/mes.</p>
-          </div>
-          <div className="grid gap-8 lg:grid-cols-3 sm:grid-cols-2">
-            {internetServices.map((service, index) => (
-              <ServiceCard key={index} {...service} />
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* SECCIÓN 3: Seguridad */}
-      <div className="py-20 sm:py-24">
+      <div className="py-20 sm:py-24 bg-gray-50 border-y border-gray-200">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-12 max-w-2xl">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Seguridad y Videovigilancia</h2>
@@ -184,7 +194,7 @@ export default function ServiciosPage() {
       </div>
 
       {/* SECCIÓN 4: Pantallas */}
-      <div className="py-20 sm:py-24 bg-gray-50 border-y border-gray-200">
+      <div className="py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-12 max-w-2xl">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Pantallas y Audiovisual</h2>
@@ -199,11 +209,11 @@ export default function ServiciosPage() {
       </div>
 
       {/* SECCIÓN 5: Ingeniería (Herencia) */}
-      <div className="py-20 sm:py-24">
+      <div className="py-20 sm:py-24 bg-gray-50 border-y border-gray-200">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mb-12 max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Ingeniería Industrial</h2>
-            <p className="mt-4 text-lg text-gray-600">Tarjetas PCB Bizerba, automatización industrial y soporte técnico especializado.</p>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Nuestro Origen: Electrónica Industrial</h2>
+            <p className="mt-4 text-lg text-gray-600">De ahí venimos. Seguimos disponibles para quien lo necesite, aunque hoy nuestro enfoque principal es la comunidad. Tarjetas PCB Bizerba, automatización industrial y soporte técnico especializado.</p>
           </div>
           <div className="grid gap-8 lg:grid-cols-3 sm:grid-cols-2">
             {ingenieriaServices.map((service, index) => (

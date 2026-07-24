@@ -6,7 +6,7 @@ import Link from 'next/link';
 const navigation = {
   solutions: [
     { name: 'Electricidad', href: '/servicios' },
-    { name: 'Internet (Fibraya)', href: '/servicios' },
+    { name: 'Internet (Fibraya)', href: 'https://fibraya.mx', external: true },
     { name: 'Cámaras', href: '/servicios' },
     { name: 'Domótica', href: '/servicios' }
   ],
@@ -64,34 +64,96 @@ export default function Header() {
       <div className="relative px-6 lg:px-8 z-10">
         <div className="mx-auto max-w-full xl:mx-12 py-20 sm:py-32 lg:py-48">
           <div className="max-w-4xl">
-            <h1 className="text-2xl font-bold tracking-tight sm:text-4xl lg:text-6xl text-indigo-500 leading-tight">
-              Control Modular MX <br />
-              <span className='text-white'>
-                <Typewriter
-                  words={['Instalaciones eléctricas y reparaciones.', 'Internet fibra óptica de alta velocidad.', 'Cámaras, pantallas y soluciones industriales.']}
-                  loop={0}
-                  cursor
-                  cursorStyle='_'
-                  typeSpeed={100}
-                  deleteSpeed={50}
-                  delaySpeed={1000}
-                />
+            {/* Superior Badge */}
+            <div className="mb-6">
+              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                🔆 Fibra óptica local · Ejidos de Tequisistlán, Atenco
               </span>
+            </div>
+
+            {/* Main Title */}
+            <h1 className="text-2xl font-bold tracking-tight sm:text-4xl lg:text-6xl text-white leading-tight">
+              Control Modular MX
             </h1>
-            
-            {/* Replaced <p> with <div> to fix hydration error (no <div> inside <p>) */}
+
+            {/* Immediate Subtitle */}
+            <p className="mt-4 text-xl sm:text-2xl lg:text-3xl font-semibold text-indigo-400">
+              Conectando a las familias
+            </p>
+
+            {/* Explanatory Text */}
+            <p className="mt-6 text-white text-lg md:text-xl max-w-2xl leading-relaxed">
+              Empezamos llevando internet de fibra óptica real a nuestra comunidad con FibraYa. Y para lo que se ofrezca en tu casa — una instalación eléctrica, cámaras, una lámpara que no prende — aquí estamos también.
+            </p>
+
+            {/* Typewriter */}
             <div className="mt-8 text-white text-xl md:text-2xl max-w-2xl leading-relaxed">
-              <p>Para empezar hoy nuestros servicios incluyen:</p>
-              <div className="mt-4 flex flex-wrap gap-x-4">
-                {navigation.solutions.map((service) => (
-                  <span key={service.name} className='lg:text-xl text-md font-medium text-gray-400 hover:text-indigo-400 transition duration-300 border-b-2 border-transparent hover:border-indigo-400'>
-                    <Link href={service.href}>{service.name}</Link>
-                  </span>
-                ))}
+              <Typewriter
+                words={[
+                  'Internet de fibra óptica FibraYa.',
+                  'Instalaciones y reparaciones eléctricas.',
+                  'Cámaras de seguridad.',
+                  'Cualquier chambita técnica que se ofrezca.'
+                ]}
+                loop={0}
+                cursor
+                cursorStyle='_'
+                typeSpeed={100}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+            </div>
+
+            {/* Featured FibraYa Card */}
+            <div className="mt-10 max-w-2xl bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-indigo-500/30 shadow-lg shadow-indigo-500/10">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-2xl">🔆</span>
+                <h3 className="text-xl font-bold text-white">FibraYa — Internet de Fibra Óptica</h3>
+              </div>
+              <p className="text-lg text-slate-300 mb-6">
+                Desde $249/mes · Instalación $200 · Sin contrato
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="https://fibraya.mx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-500 transition-colors"
+                >
+                  Ver planes de internet →
+                </a>
+                <Link
+                  href="/contacto"
+                  className="inline-flex items-center justify-center rounded-md bg-white/10 px-6 py-3 text-base font-medium text-white border border-white/20 hover:bg-white/20 transition-colors"
+                >
+                  Cotizar otro servicio →
+                </Link>
               </div>
             </div>
             
-            <div className="mt-12 flex gap-6">
+            {/* Small Links */}
+            <div className="mt-10 flex flex-wrap gap-x-6">
+              {navigation.solutions.map((service) => (
+                service.external ? (
+                  <a
+                    key={service.name}
+                    href={service.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className='text-md font-medium text-gray-400 hover:text-indigo-400 transition duration-300 border-b-2 border-transparent hover:border-indigo-400'
+                  >
+                    {service.name}
+                  </a>
+                ) : (
+                  <span key={service.name} className='text-md font-medium text-gray-400 hover:text-indigo-400 transition duration-300 border-b-2 border-transparent hover:border-indigo-400'>
+                    <Link href={service.href}>{service.name}</Link>
+                  </span>
+                )
+              ))}
+            </div>
+            
+            {/* Social Media */}
+            <div className="mt-8 flex gap-6">
               {navigation.social.map((item) => (
                 <a key={item.name} href={item.href} className="text-gray-400 hover:text-white transition duration-300">
                   <span className="sr-only">{item.name}</span>

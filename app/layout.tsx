@@ -10,14 +10,14 @@ export const metadata: Metadata = {
     canonical: 'https://controlmodularmx.com',
   },
   title: "Control Modular MX | Ingeniería Eléctrica, Internet y Soluciones Industriales",
-  description: "Instalaciones eléctricas domiciliarias, reparaciones eléctricas, internet fibra óptica Fibraya, cámaras de seguridad, extensores AP y soluciones industriales en Atenco y Estado de México.",
+  description: "Control Modular MX — Conectando a las familias de Ejidos de Tequisistlán y Atenco. Internet de fibra óptica FibraYa desde $249/mes, instalaciones eléctricas, cámaras de seguridad y cualquier chambita técnica que se ofrezca.",
   keywords: ["instalaciones eléctricas", "reparaciones eléctricas", "fibra óptica", "internet Fibraya", "cámaras de seguridad", "extensores AP", "instalación de pantallas", "ingeniería eléctrica", "Control Modular MX", "Tarjeta Bizerba", "Diseño PCB", "Atenco Estado de México"],
   verification: {
     google: "Unsax41OkawvIslWNHGKUNDEXo4iQH6VQE8Yzeo5yi4",
   },
   openGraph: {
-    title: 'Control Modular MX | Ingeniería Eléctrica, Internet y Soluciones Industriales',
-    description: 'Instalaciones eléctricas, internet fibra óptica Fibraya, cámaras de seguridad y soluciones industriales en México.',
+    title: 'Control Modular MX | Conectando a las familias',
+    description: 'Control Modular MX — Conectando a las familias de Ejidos de Tequisistlán y Atenco. Internet de fibra óptica FibraYa, instalaciones eléctricas, cámaras de seguridad.',
     url: 'https://controlmodularmx.com',
     siteName: 'Control Modular MX',
     images: [
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         url: '/bizerba.png',
         width: 1200,
         height: 630,
-        alt: 'Control Modular MX - Ingeniería Eléctrica y Soluciones Industriales',
+        alt: 'Control Modular MX - Conectando a las familias',
       },
     ],
     locale: 'es_MX',
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Control Modular MX | Ingeniería Eléctrica, Internet y Soluciones Industriales',
-    description: 'Instalaciones eléctricas, internet fibra óptica, cámaras de seguridad y soluciones industriales en México.',
+    title: 'Control Modular MX | Conectando a las familias',
+    description: 'Control Modular MX — Conectando a las familias de Ejidos de Tequisistlán y Atenco. Internet de fibra óptica FibraYa, instalaciones eléctricas, cámaras de seguridad.',
     images: ['/bizerba.png'],
   },
 };

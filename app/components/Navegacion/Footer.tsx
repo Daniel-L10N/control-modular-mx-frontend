@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 const navigation = {
   solutions: [
+    { name: 'Fibraya (Internet)', href: 'https://fibraya.mx', external: true },
     { name: 'Servicios', href: '/servicios' },
-    { name: 'Fibraya (Internet)', href: '/servicios' },
-    { name: 'Productos', href: '/productos' },
+    { name: 'Productos', href: 'https://bizerba-refacciones.vercel.app/', external: true },
     { name: 'Nosotros', href: '/nosotros' },
     { name: 'Trabajos', href: '/trabajos' },
   ],
@@ -70,8 +70,11 @@ export default function Footer() {
             <span className="text-2xl font-bold tracking-tighter text-slate-900">
               CONTROL<span className="text-indigo-600 font-black">MODULAR</span>
             </span>
+            <p className="text-sm font-medium text-indigo-600">
+              Conectando a las familias
+            </p>
             <p className="text-base text-gray-500">
-              Instalaciones eléctricas, internet fibra óptica Fibraya, cámaras de seguridad y soluciones industriales en Atenco y Estado de México.
+              Conectando a las familias de Ejidos de Tequisistlán y Atenco. Internet de fibra óptica con FibraYa, y para lo que se ofrezca: electricidad, cámaras, lo que la comunidad necesite.
             </p>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
@@ -89,9 +92,15 @@ export default function Footer() {
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.solutions.map((item) => (
                     <li key={item.name}>
-                      <Link href={item.href} className="text-base text-gray-500 hover:text-gray-900">
-                        {item.name}
-                      </Link>
+                      {item.external ? (
+                        <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-base text-gray-500 hover:text-gray-900">
+                          {item.name}
+                        </a>
+                      ) : (
+                        <Link href={item.href} className="text-base text-gray-500 hover:text-gray-900">
+                          {item.name}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>

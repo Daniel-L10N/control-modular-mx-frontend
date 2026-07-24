@@ -4,7 +4,7 @@ const incentives = [
   {
     title: 'Instalación Rápida (24-48 hrs)',
     imageSrc: '/icons/icon-shipping-simple.svg',
-    description: "Conectamos tu hogar o negocio en 24-48 horas. Internet fibra óptica Fibraya, instalaciones eléctricas y sistemas de cámaras listos en tiempo récord.",
+    description: "Conectamos tu hogar en 24-48 horas con internet FibraYa. Para electricidad y cámaras, coordinamos contigo el tiempo que tu proyecto necesite.",
   },
   {
     title: 'Soporte Directo por WhatsApp',
@@ -12,9 +12,9 @@ const incentives = [
     description: "Sin intermediarios. Habla directamente con un ingeniero por WhatsApp para resolver cualquier duda, cotización o problema técnico de forma inmediata.",
   },
   {
-    title: 'Soluciones Integrales',
+    title: 'Creciendo con la Comunidad',
     imageSrc: '/icons/icon-exchange-simple.svg',
-    description: "Electricidad + internet + seguridad + pantallas. Un solo proveedor para todas las necesidades técnicas de tu hogar o negocio. Sin complicaciones.",
+    description: "Internet, electricidad, cámaras y lo que se ofrezca. Conforme crecemos, sumamos más formas de ayudar a nuestros vecinos.",
   },
 ]
 
@@ -28,7 +28,7 @@ export default function Incentives() {
               ¿Por qué elegir Control Modular MX?
             </h2>
             <p className="mt-4 text-gray-500 leading-relaxed">
-              No somos solo vendedores, somos ingenieros que instalan, reparan y dan soporte directo. Desde instalaciones eléctricas hasta internet fibra óptica, tu proyecto está en buenas manos.
+              Somos de aquí, de Ejidos de Tequisistlán. No prometemos más de lo que podemos cumplir — empezamos con internet de fibra óptica y vamos creciendo poco a poco, atendiendo lo que la comunidad necesite.
             </p>
           </div>
           <div className="mt-16 grid grid-cols-1 gap-y-10 gap-x-8 lg:grid-cols-3">

@@ -2,16 +2,6 @@ import Link from 'next/link';
 
 const projects = [
   {
-    title: 'Instalación Eléctrica Domiciliaria Completa',
-    category: { name: 'Electricidad', color: 'text-amber-600 bg-amber-50' },
-    description:
-      'Instalación eléctrica completa para una casa nueva en Ejidos de Tequisistlán. Cableado de alta calidad, tablero con protecciones, tomas de corriente en todas las habitaciones y sistema de iluminación LED eficiente.',
-    impact: 'Casa lista para habitar en 3 días.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80',
-    href: '#',
-  },
-  {
     title: 'Red de Internet Fibra Óptica Fibraya',
     category: { name: 'Internet Fibra Óptica', color: 'text-blue-600 bg-blue-50' },
     description:
@@ -19,6 +9,16 @@ const projects = [
     impact: 'Velocidad simétrica garantizada.',
     imageUrl:
       'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80',
+    href: '#',
+  },
+  {
+    title: 'Instalación Eléctrica Domiciliaria Completa',
+    category: { name: 'Electricidad', color: 'text-amber-600 bg-amber-50' },
+    description:
+      'Instalación eléctrica completa para una casa nueva en Ejidos de Tequisistlán. Cableado de alta calidad, tablero con protecciones, tomas de corriente en todas las habitaciones y sistema de iluminación LED eficiente.',
+    impact: 'Casa lista para habitar en 3 días.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1679&q=80',
     href: '#',
   },
   {

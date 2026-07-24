@@ -8,19 +8,21 @@ import DotLoader from 'react-spinners/DotLoader';
 
 const solutions = [
   {
-    name: 'Servicios',
-    description: 'Electricidad, internet, cámaras y más',
-    href: '/servicios',
+    name: 'FibraYa (Internet)',
+    description: 'Internet fibra óptica de alta velocidad',
+    href: 'https://fibraya.mx',
+    external: true,
   },
   {
-    name: 'Fibraya (Internet)',
-    description: 'Internet fibra óptica de alta velocidad',
+    name: 'Servicios',
+    description: 'Electricidad, internet, cámaras y más',
     href: '/servicios',
   },
   {
     name: 'Productos',
     description: 'Tarjetas PCB Bizerba y refacciones',
     href: 'https://bizerba-refacciones.vercel.app/',
+    external: true,
   },
   {
     name: 'Nosotros',
@@ -76,13 +78,25 @@ export default function Navbar() {
           </Link>
           <div id='menu' className={`ml-4 mt-2 flex-shrink-0 ${isScrolled ? 'text-black' : 'text-white'}`}>
             {solutions.map((item) => (
-              <Link 
-                key={item.name}
-                href={item.href} 
-                className="text-lg inline-flex font-medium leading-6 border-b-2 border-transparent hover:border-indigo-500 transition duration-300 ease-in-out mx-4"
-              >
-                {item.name}
-              </Link>
+              item.external ? (
+                <a 
+                  key={item.name}
+                  href={item.href} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg inline-flex font-medium leading-6 border-b-2 border-transparent hover:border-indigo-500 transition duration-300 ease-in-out mx-4"
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <Link 
+                  key={item.name}
+                  href={item.href} 
+                  className="text-lg inline-flex font-medium leading-6 border-b-2 border-transparent hover:border-indigo-500 transition duration-300 ease-in-out mx-4"
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
 
             <Link
@@ -127,16 +141,31 @@ export default function Navbar() {
                       <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                         <div className="relative grid gap-8 bg-white p-7">
                           {solutions.map((item) => (
-                            <Link
-                              key={item.name}
-                              href={item.href}
-                              className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none"
-                            >
-                              <div className="ml-4">
-                                <p className="text-sm font-medium text-gray-900">{item.name}</p>
-                                <p className="text-sm text-gray-500">{item.description}</p>
-                              </div>
-                            </Link>
+                            item.external ? (
+                              <a
+                                key={item.name}
+                                href={item.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none"
+                              >
+                                <div className="ml-4">
+                                  <p className="text-sm font-medium text-gray-900">{item.name}</p>
+                                  <p className="text-sm text-gray-500">{item.description}</p>
+                                </div>
+                              </a>
+                            ) : (
+                              <Link
+                                key={item.name}
+                                href={item.href}
+                                className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none"
+                              >
+                                <div className="ml-4">
+                                  <p className="text-sm font-medium text-gray-900">{item.name}</p>
+                                  <p className="text-sm text-gray-500">{item.description}</p>
+                                </div>
+                              </Link>
+                            )
                           ))}
                         </div>
                       </div>
