@@ -10,7 +10,7 @@ const solutions = [
   {
     name: 'FibraYa (Internet)',
     description: 'Internet fibra óptica de alta velocidad',
-    href: 'https://fibraya.mx',
+    href: 'https://fibraya.vercel.mx',
     external: true,
   },
   {

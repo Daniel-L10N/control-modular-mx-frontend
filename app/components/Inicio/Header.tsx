@@ -6,7 +6,7 @@ import Link from 'next/link';
 const navigation = {
   solutions: [
     { name: 'Electricidad', href: '/servicios' },
-    { name: 'Internet (Fibraya)', href: 'https://fibraya.mx', external: true },
+    { name: 'Internet (Fibraya)', href: 'https://fibraya.vercel.mx', external: true },
     { name: 'Cámaras', href: '/servicios' },
     { name: 'Domótica', href: '/servicios' }
   ],
@@ -115,7 +115,7 @@ export default function Header() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="https://fibraya.mx"
+                  href="https://fibraya.vercel.mx"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-500 transition-colors"
