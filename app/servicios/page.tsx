@@ -152,7 +152,7 @@ export default function ServiciosPage() {
           </div>
           <div className="mt-8">
             <a
-              href="https://fibraya.vercel.mx"
+              href="https://fibraya.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-500 transition-colors"

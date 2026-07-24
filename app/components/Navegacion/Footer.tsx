@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const navigation = {
   solutions: [
-    { name: 'Fibraya (Internet)', href: 'https://fibraya.vercel.mx', external: true },
+    { name: 'Fibraya (Internet)', href: 'https://fibraya.vercel.app', external: true },
     { name: 'Servicios', href: '/servicios' },
     { name: 'Productos', href: 'https://bizerba-refacciones.vercel.app/', external: true },
     { name: 'Nosotros', href: '/nosotros' },
